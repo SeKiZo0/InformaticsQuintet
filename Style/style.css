@@ -12,6 +12,7 @@ body {
     overflow: hidden;
     padding-bottom: 20px;
     color: rgba(255, 255, 255, 0.7);
+    height: 100vh;
   }
 
   .blocks {
@@ -23,10 +24,10 @@ body {
 
   .block {
     background: linear-gradient(200deg, rgb(29, 145, 252) 13.57%, rgb(90, 54, 192) 98.38%);
-    width: max(50vw, 280px);
+    width: 100vw;
     padding: 25px 30px 10px;
     border-radius: 15px;
-    margin-bottom: 40px;
+    margin-bottom: 0px;
     box-shadow: 0 30px 30px -10px rgba(0, 0, 0, .3);
     
     &:nth-child(2) {
