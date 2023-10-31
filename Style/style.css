@@ -1,53 +1,105 @@
+:root {
+  --lightBlue: #81c4ff;
+  --blue: #16588e;
+  --red: #e7222e;
+  --grey: #b8cad1;
+  --darkGrey: #2d4046;
+}
+
 body {
-    margin: 0;
-    background: #fff;
-    font-family: sans-serif;
-    background: linear-gradient(120deg, #5c2fa6 13.57%, #5a36c0 98.38%);
-    scroll-behavior: none;
+  margin: 0;
+  background: #fff;
+  font-family: sans-serif;
+  background: linear-gradient(120deg, var(--blue) 13.57%, var(--lightBlue) 98.38%);
+  padding: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+main {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.text {
+  font-size: max(1vw, 15px);
+  line-height: 1.4;
+  overflow: hidden;
+  padding-bottom: 20px;
+  color: rgba(255, 255, 255, 0.7);
+  height: 100vh;
+}
+
+.acontainer {
+  width: 100%;
+  margin: 0%;
+  padding: 0%;
+}
+
+.hero {
+  height: 100vh;
+  width: 100%;
+}
+
+img {
+  height: 70%;
+}
+
+.leftPerson {
+  display: flex;
+  place-content: center;
+  flex-direction: column;
+}
+
+.About {
+  height: 100vh;
+}
+
+/*
+.blocks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20vh;
+  overflow: hidden;
+}*/
+
+.block {
+  background: linear-gradient(200deg, rgb(29, 145, 252) 13.57%, rgb(90, 54, 192) 98.38%);
+  border-radius: 15px;
+  margin-bottom: 0px;
+  box-shadow: 0 30px 30px -10px rgba(0, 0, 0, .3);
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+
+  &:nth-child(2) {
+    background: linear-gradient(200deg, rgb(242, 136, 133) 13.57%, rgb(233, 79, 102) 98.38%);
   }
 
-  .text {
-    font-size: max(1vw, 15px);
-    line-height: 1.4;
-    overflow: hidden;
-    padding-bottom: 20px;
-    color: rgba(255, 255, 255, 0.7);
-    height: 100vh;
+  &:nth-child(3) {
+    background: linear-gradient(200deg, rgb(101, 187, 118) 13.57%, rgb(70, 111, 171) 98.38%);
   }
 
-  .blocks {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 20vh;
+  &:nth-child(4) {
+    background: linear-gradient(200deg, #c215d1 13.57%, #9813a1 98.38%);
   }
 
-  .block {
-    background: linear-gradient(200deg, rgb(29, 145, 252) 13.57%, rgb(90, 54, 192) 98.38%);
-    width: 100vw;
-    padding: 25px 30px 10px;
-    border-radius: 15px;
-    margin-bottom: 0px;
-    box-shadow: 0 30px 30px -10px rgba(0, 0, 0, .3);
-    
-    &:nth-child(2) {
-      background: linear-gradient(200deg, rgb(242, 136, 133) 13.57%, rgb(233, 79, 102) 98.38%);
-    }
-    
-    &:nth-child(3) {
-      background: linear-gradient(200deg, rgb(101, 187, 118) 13.57%, rgb(70, 111, 171) 98.38%);
-    }
-    
-    &:nth-child(4) {
-      background: linear-gradient(200deg, #c215d1 13.57%, #9813a1 98.38%);
-    }
+  &:not(:first-child) {
+    top: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .accordion {
+    padding: 15px 20px 8px;
   }
 
-  @media (max-width: 480px) {
-    .accordion {
-      padding: 15px 20px 8px;
-    }
-    .title {
-      font-size: 20px;
-    }
+  .title {
+    font-size: 20px;
   }
+}
