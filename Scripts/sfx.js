@@ -1,3 +1,4 @@
+//https://codepen.io/GreenSock/pen/WNzLeWX
 gsap.registerPlugin(ScrollTrigger)
 
 const Scroll = new function() {
