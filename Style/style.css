@@ -5,6 +5,9 @@
   --grey: #b8cad1;
   --darkGrey: #2d4046;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;

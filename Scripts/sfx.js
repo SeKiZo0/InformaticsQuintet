@@ -4,25 +4,16 @@ window.onbeforeunload = function() {
 	window.scrollTo(0, 0);
 }
 gsap.registerPlugin(ScrollTrigger)
-let speed = 100;
-/*  SCENE 1 */
-let scene1 = gsap.timeline();
-ScrollTrigger.create({
-	animation: scene1,
-	trigger: ".hero",
-	start: "top top",
-	end: "45% 100%",
-	scrub: 1,
-});
+let speed = 500;
 
 // hills animation 
-scene1.to("#mountain1", { y: 1 * speed})
-scene1.to("#mountain2", { y: 2.5 * speed})
-scene1.to("#mountain3", { y: 3 * speed})
-scene1.to("#mountain4", { y: 3.5 * speed })
-scene1.to("#mountain5", { y: 4 * speed })
-scene1.to("#mountain6", { y: 4.5 * speed})
-scene1.to("#mountain7", { y: 5 * speed})
+gsap.to("#mountain1", {scrollTrigger : { scrub : 1 }, y: 1 * speed})
+gsap.to("#mountain2", {scrollTrigger : { scrub : 1 }, y: 1.5 * speed})
+gsap.to("#mountain3", {scrollTrigger : { scrub : 1 }, y: 3 * speed})
+gsap.to("#mountain4", {scrollTrigger : { scrub : 1 }, y: 4.5 * speed })
+gsap.to("#mountain5", {scrollTrigger : { scrub : 1 }, y: 5 * speed })
+gsap.to("#mountain6", {scrollTrigger : { scrub : 1 }, y: 5.5 * speed})
+gsap.to("#mountain7", {scrollTrigger : { scrub : 1 }, y: 6 * speed})
 
 const Scroll = new function() {
 	let sections
