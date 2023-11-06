@@ -1,5 +1,28 @@
 //https://codepen.io/GreenSock/pen/WNzLeWX
+
+window.onbeforeunload = function() {
+	window.scrollTo(0, 0);
+}
 gsap.registerPlugin(ScrollTrigger)
+let speed = 100;
+/*  SCENE 1 */
+let scene1 = gsap.timeline();
+ScrollTrigger.create({
+	animation: scene1,
+	trigger: ".hero",
+	start: "top top",
+	end: "45% 100%",
+	scrub: 1,
+});
+
+// hills animation 
+scene1.to("#mountain1", { y: 1 * speed})
+scene1.to("#mountain2", { y: 2.5 * speed})
+scene1.to("#mountain3", { y: 3 * speed})
+scene1.to("#mountain4", { y: 3.5 * speed })
+scene1.to("#mountain5", { y: 4 * speed })
+scene1.to("#mountain6", { y: 4.5 * speed})
+scene1.to("#mountain7", { y: 5 * speed})
 
 const Scroll = new function() {
 	let sections
@@ -109,6 +132,9 @@ const Scroll = new function() {
 		totalScroll -= win.h
 		return totalScroll
 	}
+
+	
 }
 
 Scroll.init()
+
