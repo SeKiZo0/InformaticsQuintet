@@ -117,3 +117,104 @@ img {
     font-size: 20px;
   }
 }
+
+/*Connor Css*/
+#space {
+  background-color: #000022;
+  background-image: radial-gradient(ellipse at bottom, #000033 0%, #000022 100%);
+  background-image: radial-gradient(white, rgba(255,255,255,0) 2px, transparent 40px),
+                    radial-gradient(white, rgba(255,255,255,0) 2px, transparent 30px),
+                    radial-gradient(white, rgba(255,255,255,0) 2px, transparent 50px),
+                    radial-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0) 2px, transparent 30px),
+                    radial-gradient(white, rgba(255,255,255,0) 2px, transparent 40px),
+                    radial-gradient(white, rgba(255,255,255,0) 2px, transparent 50px),
+                    radial-gradient(white, rgba(255,255,255,0) 2px, transparent 30px),
+                    radial-gradient(white, rgba(255,255,255,0) 2px, transparent 40px),
+                    radial-gradient(white, rgba(255,255,255,0) 2px, transparent 50px),
+                    radial-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0) 2px, transparent 30px);
+
+  background-attachment: fixed;
+  background-position: 5px 5px, 100px 200px, 150px 150px, 250px 300px, 300px 100px, 450px 250px, 600px 150px, 700px 300px, 800px 200px, 900px 100px;
+  background-size: cover;
+}
+
+#space h1 {
+  font-weight: bold; 
+  color: white;      
+  text-align: center; 
+  text-shadow: 0 0 30px white;
+}
+
+.container {
+  height: 400px;
+  width: 400px;
+  position: relative;
+}
+
+.sun {
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+  border-radius: 50%;
+  box-shadow: 0 0 100px white;
+  position: absolute;
+  top: 225px;
+  left: 150px;
+}
+
+.globe.earth {
+  background-color: blue;
+  height: 30px;
+  right: 28px;
+  top: 28px;
+  width: 30px;
+  box-shadow: 0 0 40px white
+}
+
+.globe.moon {
+  width: 12px;
+  height: 12px;
+  background: #d6d6d6;
+  right: 2px;
+  top: 8px;
+}
+
+.globe {
+  border-radius: 50%;
+  position: absolute;
+}
+
+.orbit.earth {
+  position: relative;
+  animation: orbit 36.5s linear infinite;
+  height: 300px;
+  left: -95px;
+  top: -95px;
+  width: 300px;
+}
+
+.orbit.moon {
+  animation: orbit 2.7s linear infinite;
+  height: 80px;
+  left: -25px;
+  top: -25px;
+  width: 80px;
+}
+
+.orbit {
+  position: relative;
+  border: solid;
+  border-color: white transparent 
+    transparent transparent;
+  border-radius: 50%;
+  border-width: 1px 1px 0 0;
+  box-sizing: border-box;
+  transform: rotate(0deg);
+  transform-origin: center;
+}
+
+@keyframes orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
