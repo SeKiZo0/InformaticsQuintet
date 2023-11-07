@@ -41,8 +41,9 @@ main {
 }
 
 svg {
-  width: 100%;
+
   height: 100vh;
+  width: 100vw;
   top: 0;
   left: 0;
 }
@@ -54,6 +55,13 @@ svg {
   height: 100vh;
   top: 0;
   z-index: 0;
+  background: linear-gradient(
+    to bottom,
+    #C2DFED 0%,
+    #C2DFED 50%,
+    #021713 50%,
+    #021713 100%
+  );
 }
 
 img {
