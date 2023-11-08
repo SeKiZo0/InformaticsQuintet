@@ -162,7 +162,6 @@ img {
 .sun {
   width: 100px;
   height: 100px;
-  background-color: yellow;
   border-radius: 50%;
   box-shadow: 0 0 100px white;
   position: absolute;
