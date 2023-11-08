@@ -8,13 +8,7 @@ let speed = 500;
 
 // hills animation 
 gsap.to("#mountain1", {scrollTrigger : { scrub : 1 }, y: 0.001 * speed})
-gsap.to("#mountain2", {scrollTrigger : { scrub : 1 }, y: 1.5 * speed})
-gsap.to("#mountain3", {scrollTrigger : { scrub : 1 }, y: 3 * speed})
-gsap.to("#mountain4", {scrollTrigger : { scrub : 1 }, y: 4.5 * speed })
-gsap.to("#mountain5", {scrollTrigger : { scrub : 1 }, y: 5 * speed })
-gsap.to("#mountain6", {scrollTrigger : { scrub : 1 }, y: 5.5 * speed})
-gsap.to("#mountain7", {scrollTrigger : { scrub : 1 }, y: 6 * speed})
-gsap.to("#sun", {scrollTrigger : { scrub : 0.4 }, y: 7.6 * speed})
+
 
 const Scroll = new function() {
 	let sections
