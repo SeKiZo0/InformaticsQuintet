@@ -1,5 +1,5 @@
 import * as THREE from 'https://unpkg.com/three@0.126.1/build/three.module.js';
-import { GLTFLoader } from "./Scripts/GLTFLoader";
+import { GLTFLoader } from "https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/loaders/GLTFLoader.js";
 //sizes
 const sizes = {
     width: window.innerWidth,
