@@ -1,5 +1,4 @@
-import * as THREE from 'https://unpkg.com/three@0.126.1/build/three.module.js';
-import { GLTFLoader } from "https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/loaders/GLTFLoader.js";
+
 //sizes
 const sizes = {
     width: window.innerWidth,
@@ -16,7 +15,7 @@ const canvas = document.querySelector(".webgl");
 var renderer = new THREE.WebGLRenderer({canvas});
 renderer.setSize(sizes.width, sizes.height);
 
-var loader = new GLTFLoader();
+var loader = new THREE.GLTFLoader();
 var obj;
 loader.load("../Images and svgs/3D/bmw_f22_eurofighter/scene.gltf",function(gltf){
     obj = gltf.scene;
@@ -24,7 +23,7 @@ loader.load("../Images and svgs/3D/bmw_f22_eurofighter/scene.gltf",function(gltf
     scene.add(gltf.scene);
 });
 scene.background = new THREE.Color(0xffffff)
-var light = new THREE.PointLight(0xffffff,202,100)
+var light = new THREE.PointLight(0xffffff,22,100)
 //light x y z
 light.position.set(3,10,-7)
 //var light = new THREE.HemisphereLight(0xffffff, 0x000000);
