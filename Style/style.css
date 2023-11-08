@@ -12,7 +12,7 @@ html {
 body {
   margin: 0;
   background: #fff;
-  font-family: sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   background: linear-gradient(120deg, var(--blue) 13.57%, var(--lightBlue) 98.38%);
   padding: 0;
   height: 100vh;
@@ -81,7 +81,7 @@ img {
 }*/
 
 .block {
-  background: linear-gradient(200deg, rgb(29, 145, 252) 13.57%, rgb(90, 54, 192) 98.38%);
+  background: linear-gradient(200deg, var(--lightBlue) 13.57%, rgb(67, 139, 247) 98.38%);
   border-radius: 15px;
   margin-bottom: 0px;
   box-shadow: 0 30px 30px -10px rgba(0, 0, 0, .3);
@@ -93,16 +93,21 @@ img {
   padding: 1rem;
 
   &:nth-child(2) {
-    background: linear-gradient(200deg, rgb(242, 136, 133) 13.57%, rgb(233, 79, 102) 98.38%);
+    background: linear-gradient(200deg, var(--blue)  13.57%, rgb(79, 89, 233) 98.38%);
   }
 
   &:nth-child(3) {
-    background: linear-gradient(200deg, rgb(101, 187, 118) 13.57%, rgb(70, 111, 171) 98.38%);
+    background: linear-gradient(200deg, var(--red)  13.57%, rgb(253, 132, 132) 98.38%);
   }
 
   &:nth-child(4) {
-    background: linear-gradient(200deg, #c215d1 13.57%, #9813a1 98.38%);
+    background: linear-gradient(200deg, var(--grey) 13.57%, #8a8a8a 98.38%);
   }
+
+  &:nth-child(5) {
+    background: linear-gradient(200deg, var(--darkGrey) 13.57%, #363636 98.38%);
+  }
+
 
   &:not(:first-child) {
     top: 100%;
