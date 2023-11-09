@@ -127,28 +127,36 @@ img {
 /*Connor Css*/
 #space {
   background-color: #000022;
-  background-image: radial-gradient(ellipse at bottom, #000033 0%, #000022 100%);
-  background-image: radial-gradient(white, rgba(255,255,255,0) 2px, transparent 40px),
-                    radial-gradient(white, rgba(255,255,255,0) 2px, transparent 30px),
-                    radial-gradient(white, rgba(255,255,255,0) 2px, transparent 50px),
-                    radial-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0) 2px, transparent 30px),
-                    radial-gradient(white, rgba(255,255,255,0) 2px, transparent 40px),
-                    radial-gradient(white, rgba(255,255,255,0) 2px, transparent 50px),
-                    radial-gradient(white, rgba(255,255,255,0) 2px, transparent 30px),
-                    radial-gradient(white, rgba(255,255,255,0) 2px, transparent 40px),
-                    radial-gradient(white, rgba(255,255,255,0) 2px, transparent 50px),
-                    radial-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0) 2px, transparent 30px);
-
-  background-attachment: fixed;
-  background-position: 5px 5px, 100px 200px, 150px 150px, 250px 300px, 300px 100px, 450px 250px, 600px 150px, 700px 300px, 800px 200px, 900px 100px;
-  background-size: cover;
+  background-image: radial-gradient(rgba(255,255,255,0), transparent 30px);
 }
 
-#space h1 {
+.WorldBMW {
   font-weight: bold; 
   color: white;      
   text-align: center; 
-  text-shadow: 0 0 30px white;
+  position: relative;
+  -webkit-box-reflect: below -20px linear-gradient(transparent, rgb(0, 0, 0, .2));
+}
+
+.WorldBMW span {
+  position: relative;
+  display: inline-block;
+  font-size: 4rem;
+  /*text-transform: uppercase;*/
+  animation: WorldBMW 3s infinite;
+  animation-delay: calc(.1s * var(--i))
+}
+
+@keyframes WorldBMW {
+  0%,
+  40%,
+  100% {
+    transform: translateY(0);
+  }
+
+  20% {
+    transform: translateY(-20px)
+  }
 }
 
 .container {
@@ -223,3 +231,5 @@ img {
     transform: rotate(360deg);
   }
 }
+
+/*Connor CSS End*/
