@@ -17,19 +17,19 @@ renderer.setSize(sizes.width, sizes.height);
 
 var loader = new THREE.GLTFLoader();
 var obj;
-loader.load("../Images and svgs/3D/bmw_f22_eurofighter/scene.gltf",function(gltf){
+loader.load("../Images and svgs/3D/bmw_m3gtr/scene.gltf",function(gltf){
     obj = gltf.scene;
     obj.rotation.y += 0.01
     scene.add(gltf.scene);
 });
 scene.background = new THREE.Color(0xffffff)
-var light = new THREE.PointLight(0xffffff,22,100)
+var light = new THREE.PointLight(0xffffff,202,100)
 //light x y z
-light.position.set(3,10,-7)
+light.position.set(3,70,-7)
 //var light = new THREE.HemisphereLight(0xffffff, 0x000000);
 scene.add(light);
 //camera x y z
-camera.position.set(0,1.5,5)
+camera.position.set(0,20.5,50)
 
 function animate(){
     requestAnimationFrame(animate);
@@ -46,7 +46,15 @@ window.addEventListener("resize", () => {
  renderer.setSize(sizes.width, sizes.height);
  camera.updateProjectionMatrix()
  animate()
-})
+});
+
+THREE.DefaultLoadingManager.onProgress = function ( item, loaded, total ) {
+  // All textures are finished loading when loaded === total
+  console.log(loaded)
+  console.log(total)
+
+};
+
 
 const loop = () => {
     requestAnimationFrame(loop);
