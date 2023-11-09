@@ -17,19 +17,23 @@ renderer.setSize(sizes.width, sizes.height);
 
 var loader = new THREE.GLTFLoader();
 var obj;
-loader.load("../Images and svgs/3D/bmw_m3gtr/scene.gltf",function(gltf){
+loader.load("Images and svgs/3D/bmw_f22_eurofighter/scene.gltf",function(gltf){
     obj = gltf.scene;
     obj.rotation.y += 0.01
     scene.add(gltf.scene);
+    obj.position.x =0
 });
 scene.background = new THREE.Color(0xffffff)
-var light = new THREE.PointLight(0xffffff,202,100)
+
+const light = new THREE.DirectionalLight( 0xffffff, 5);
+//var light = new THREE.PointLight(0xffffff,2500,100)
 //light x y z
-light.position.set(3,70,-7)
+light.position.set(2,1,0.5)
+light.castShadow = true; 
 //var light = new THREE.HemisphereLight(0xffffff, 0x000000);
 scene.add(light);
 //camera x y z
-camera.position.set(0,20.5,50)
+camera.position.set(0,1,5)
 
 function animate(){
     requestAnimationFrame(animate);
@@ -55,9 +59,23 @@ THREE.DefaultLoadingManager.onProgress = function ( item, loaded, total ) {
 
 };
 
+var rotation = 0
+var shouldRotate = true
 
 const loop = () => {
+  if (rotation >= 4) {
+    shouldRotate = false
+  } else {
     requestAnimationFrame(loop);
-    scene.rotation.y += 0.005
+    obj.rotation.y += 0.07
+    rotation = rotation + 0.07
+    
+  }
+    
 }
-loop()
+
+
+canvas.addEventListener("click",() => { 
+  loop()
+})
+

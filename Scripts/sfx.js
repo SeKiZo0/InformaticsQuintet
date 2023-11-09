@@ -7,9 +7,12 @@ gsap.registerPlugin(ScrollTrigger)
 let speed = 500;
 
 // hills animation 
-gsap.to("#mountain1", {scrollTrigger : { scrub : 1 }, y: 0.001 * speed})
+//gsap.to("#mountain1", {scrollTrigger : { scrub : 1 }, y: 0.001 * speed})
+
+//Morris section
 
 
+//dont put animations below this point
 const Scroll = new function() {
 	let sections
 	let page
