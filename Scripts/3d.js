@@ -12,30 +12,61 @@ var camera = new THREE.PerspectiveCamera(
   1000
 );
 const canvas = document.querySelector(".webgl");
-var renderer = new THREE.WebGLRenderer({ canvas });
+var renderer = new THREE.WebGLRenderer({ antialias: true, canvas });
 renderer.setSize(sizes.width, sizes.height);
 
 
 var loader = new THREE.GLTFLoader();
 var obj;
-loader.load("Images and svgs/3D/gaming_desktop_pc/scene.gltf", function (gltf) {
-  obj = gltf.scene;
+loader.load("Images and svgs/3D/gaming_desktop_pc.glb", function (object) {
+  obj = object.scene;
   obj.rotation.y += 5
-  scene.add(gltf.scene);
-  obj.position.x = 0
-  console.log(obj.children[0].children[0].children[0].children)
-});
-scene.background = new THREE.Color(0xffffff)
 
-const light = new THREE.DirectionalLight(0xffffff, 5);
+  //obj.position.x = 0
+  obj.traverse(function (child) {
+
+    if (child.isMesh) {
+
+      child.castShadow = true;
+      child.receiveShadow = true;
+
+    }
+
+  });
+
+  scene.add(obj);
+
+});
+
+scene.background = new THREE.Color(0xffffff)
+var spotLight = new THREE.SpotLight(0xffffff, 1);
+spotLight.position.set(50, 40, 20);
+spotLight.angle = 0.4;
+spotLight.penumbra = 0.05;
+spotLight.decay = 1;
+spotLight.distance = 2000;
+
+spotLight.castShadow = true;
+scene.add(spotLight);
+
+spotLight.target.position.set(3, 0, - 3);
+scene.add(spotLight.target);
+
+//const light = new THREE.DirectionalLight(0xffffff, 3);
 //var light = new THREE.PointLight(0xffffff,2500,100)
 //light x y z
-light.position.set(2, 1, 0.5)
-light.castShadow = true;
+//light.position.set(-5, 2, 5.5)
+//light.castShadow = true;
 //var light = new THREE.HemisphereLight(0xffffff, 0x000000);
-scene.add(light);
+//scene.add(light);
 //camera x y z
-camera.position.set(0, 5, 15)
+camera.position.set(0, 5, 12)
+
+renderer.setPixelRatio( window.devicePixelRatio );
+renderer.gammaOutput = true;
+renderer.gammaFactor = 2.2;
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap; // default THREE.PCFShadowMap
 
 
 function animate() {
@@ -76,15 +107,7 @@ const loop = () => {
   }
 
 }
-
-//Setting up anchors
-let d = document;
-let anchor1 = d.getElementById('Stephen');
-let anchor2 = d.getElementById('Ross');
-let anchor3 = d.getElementById('Rico');
-let anchor4 = d.getElementById('Connor');
-let anchor5 = d.getElementById('Morris');
-
+//adding nav
 canvas.addEventListener("click", onCanvasClick)
 
 function onCanvasClick(event) {
@@ -103,7 +126,9 @@ function onCanvasClick(event) {
   const intersects = raycaster.intersectObjects(scene.children, true);
   //This is what happens when you click on a certain part of the model, it will scroll to the assigned person
   if (intersects.length > 0) {
-    const clickedMesh = intersects[0].object.parent.name;
+    const clickedMesh = intersects[0].object.name;
+    console.log(clickedMesh)
+
     if (/Cube011/.test(clickedMesh) || /Cube012/.test(clickedMesh) || /Cube021/.test(clickedMesh) || /Cube020/.test(clickedMesh) || /Cube061/.test(clickedMesh) || /Cube047/.test(clickedMesh) || /aorus/.test(clickedMesh) || /metal-mesh/.test(clickedMesh)) {
       console.log('case')
       location.href = "#Stephen"
@@ -127,6 +152,7 @@ function onCanvasClick(event) {
     else {
       console.log(clickedMesh)
     }
+
   }
 }
 
