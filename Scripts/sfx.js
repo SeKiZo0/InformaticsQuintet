@@ -24,4 +24,4 @@ panels.forEach((panel, i) => {
   });
 });
 
-//Morris section, everyone can put their stuff above
+//Morris section, everyone else can put their stuff above
