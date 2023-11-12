@@ -42,13 +42,16 @@ main {
 }
 
 svg {
-
+  left: -20%;
+  width: 100%;
   height: 100vh;
-  width: 100vw;
-  top: 0;
-  left: 0;
+  position: absolute;
+  z-index: 1;
 }
 
+.displacement {
+  filter: url(#displacementFilter);
+}
 
 .hero {
   width: 100%;
@@ -62,7 +65,7 @@ svg {
 }
 
 .block {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   font-weight: 600;
   font-size: 1.5em;
@@ -98,10 +101,15 @@ svg {
 
 .block5{
     background: linear-gradient(200deg, var(--darkGrey) 13.57%, #363636 98.38%); 
-    padding: 10px;
     height: 100vh;
+    /*Morris special sauce*/
+    position: relative;
 }
 
+.mContent{
+  padding: 10px;
+z-index: 2;
+}
 
 body {
   overflow-x: hidden;
@@ -130,7 +138,7 @@ img {
   padding-bottom: 20vh;
   overflow: hidden;
 }*/
-
+/*
 .block {
   background: linear-gradient(200deg, var(--lightBlue) 13.57%, rgb(67, 139, 247) 98.38%);
 
@@ -150,6 +158,7 @@ img {
     background-image: linear-gradient(200deg, var(--darkGrey) 13.57%, #363636 98.38%);
   }
 }
+*/
 
 /*Connor Css*/
 #space {

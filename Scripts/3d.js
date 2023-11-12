@@ -156,6 +156,14 @@ function onCanvasClick(event) {
   }
 }
 
+//Turns the object based on mouse position
+canvas.addEventListener('mousemove', function(event) {
+  var mouseX = event.clientX - this.offsetLeft;
+  var mouseY = event.clientY - this.offsetTop;
+
+  console.log('Mouse X: ' + mouseX + ', Mouse Y: ' + mouseY);
+});
+
 
 
 //declaring all the parts on the pc
