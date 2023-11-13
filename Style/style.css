@@ -16,12 +16,13 @@ a{
 .modal, .modal-content, .modal-body, .modal-xl, .modal-dialog{
   border: none !important;
   padding: 0 !important;
-  border-radius: 10%;
+  border-radius: 50px;
 }
 
 .modal-body{
   display: flex;
   justify-content: center;
+  overflow: hidden;
 }
 
 .modal-open .modal-backdrop {
@@ -41,7 +42,11 @@ body {
   background: linear-gradient(120deg, var(--blue) 13.57%, var(--lightBlue) 98.38%);
   padding: 0;
   overflow-y: auto;
-  zoom: 1.3;
+  padding-right: 0px !important;
+}
+
+::-webkit-scrollbar{
+  display: none;
 }
 
 /*dont mind the redundency*/
