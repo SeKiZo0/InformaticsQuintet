@@ -112,11 +112,6 @@ svg {
   height: 100vh;
 }
 
-.modal .block3{
-  height: 80vh;
-  width: 80vw;
-}
-
 .block4{
   background: linear-gradient(200deg, var(--grey) 13.57%, #8a8a8a 98.38%);
   padding: 10px;
@@ -129,6 +124,11 @@ svg {
     /*Morris special sauce*/
     position: relative;
     z-index: 0;
+}
+
+.modal .block1, .block2, .block3, .block4, .block5{
+  height: 80vh;
+  width: 80vw;
 }
 
 .block5 svg {
@@ -165,40 +165,9 @@ img {
   height: 100vh;
 }
 
-/*
-.blocks {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-bottom: 20vh;
-  overflow: hidden;
-}*/
-/*
-.block {
-  background: linear-gradient(200deg, var(--lightBlue) 13.57%, rgb(67, 139, 247) 98.38%);
-
-  &:nth-child(2) {
-    background: linear-gradient(200deg, var(--blue) 13.57%, rgb(79, 89, 233) 98.38%);
-  }
-
-  &:nth-child(3) {
-    background: linear-gradient(200deg, var(--red) 13.57%, rgb(253, 132, 132) 98.38%);
-  }
-
-  &:nth-child(4) {
-    background: linear-gradient(200deg, var(--grey) 13.57%, #8a8a8a 98.38%);
-  }
-
-  &:nth-child(5) {
-    background-image: linear-gradient(200deg, var(--darkGrey) 13.57%, #363636 98.38%);
-  }
-}
-*/
-
 /*Connor Css*/
 #space {
   background-color: #000022;
-  background-image: radial-gradient(rgba(255, 255, 255, 0), transparent 30px);
 }
 
 .WorldBMW {
@@ -206,7 +175,6 @@ img {
   color: white;
   text-align: center;
   position: relative;
-  -webkit-box-reflect: below -20px linear-gradient(transparent, rgb(0, 0, 0, .2));
 }
 
 .WorldBMW span {
@@ -241,19 +209,33 @@ img {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  box-shadow: 0 0 100px white;
+  box-shadow: 0 0 100px rgb(64, 109, 255);
   position: absolute;
   top: 225px;
   left: 150px;
 }
 
 .globe.earth {
-  background-color: blue;
+  background-image: url("../Images and svgs/earth.png");
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover;
+  animation-name: spin;
+  animation-duration: 4000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
   height: 30px;
   right: 28px;
   top: 28px;
   width: 30px;
-  box-shadow: 0 0 40px white
+}
+
+@keyframes spin { 
+  from { 
+      transform: rotate(0deg); 
+  } to { 
+      transform: rotate(-360deg); 
+  }
 }
 
 .globe.moon {
