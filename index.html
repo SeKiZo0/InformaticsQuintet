@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Informaticts Pentad</title>
+    <title>Home</title>
     <link rel="shortcut icon" href="Images and svgs/Logo/InformaticsPentatLogo.png" type="image/x-icon">
 
     <!-- Latest compiled and minified CSS -->
@@ -17,246 +17,176 @@
 
 <body>
 
-    <header class="hero d-flex align-items-center d-flex justify-content-around text-center"
-        style="background-color: rgba(163, 163, 163, 0.76);">
-        <h2 class="p-5 m-5" style="font-weight: 600; color: rgb(59, 59, 59);">INFORMATICS PENTAD</h2>
-        <img class="mx-auto d-block p-3 rounded-5"
-            style="max-width: 40%; height: auto; border: 1px solid rgb(59, 59, 59); border-right: 4px solid rgb(59, 59, 59); border-bottom: 4px solid rgb(59, 59, 59);"
-            src="./Images and svgs/exploded-car.png" alt="Image of an exploded-view bmw car" />
-    </header>
-
-    <section class="hero">
-        <section id="space">
-            <h1 style="text-align: center;">Our World Revolves Around BMW</h1>
-            <div class="container">
-                <div class="sun">
-                    <img src="./Images and svgs/Logo/bmw-logo.png"
-                        style="position: absolute; width: 100px; height: 100px;" />
-                    <div class="orbit earth">
-                        <div class="globe earth">
-                            <div class="orbit moon">
-                                <div class="globe moon"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </section>
-    <header class="hero">
-
+    <header class="hero d-flex flex-column text-center justify-content-center" style="background-color: #fff;">
+        <a class="mb-5" style="font-size: 25pt; font-weight: 600; color: rgb(59, 59, 59);" href="./templates/group.html">INFORMATICS PENTAD</a>
+        <div class="pt-5 d-flex justify-content-around w-100">
+            <a data-bs-toggle="modal" data-bs-target="#stephenModal">Stephen</a>
+            <a data-bs-toggle="modal" data-bs-target="#rossModal">Ross</a>
+            <a data-bs-toggle="modal" data-bs-target="#ricoModal">Rico</a>
+            <a data-bs-toggle="modal" data-bs-target="#connorModal">Connor</a>
+            <a data-bs-toggle="modal" data-bs-target="#morrisModal">Morris</a>
+        </div>
     </header>
 
 
-    <div class="blocks" id="blocks">
-        <div id="Stephen"></div>
-        <div class="panels">
-            <section class="block text-light">
-                <div class="row block1">
-                    <div class="col-md-5 leftPerson">
-                        <img src="Images and svgs/Group-3.svg" alt="Image of Rico">
-                        <h1 class="name">
-                            Unassigned
-                        </h1>
-                        <h2 class="degree">
-                            Your Degree here
-                        </h2>
-                    </div>
-                    <div class="col-md-7">
-                        <div class="text text-light">Text Here</div>
-                    </div>
-                </div>
-            </section>
-        </div>
-        <div id="Ross"></div>
-        <div class="panels">
-            <section class="block text-light">
-                <div class="row block2">
-                    <div class="col-md-5 leftPerson">
-                        <img src="Images and svgs/Group-3.svg" alt="Image of Rico">
-                        <h1 class="name">
-                            Unassigned
-                        </h1>
-                        <h2 class="degree">
-                            Your Degree here
-                        </h2>
-                    </div>
-                    <div class="col-md-7">
-                        <div class="text-light"> Text Here </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-        <div id="Rico"></div>
-        <div class="panels">
-            <!--------- RICO SECTION START ---------->
-            <section class="block text-light">
-                <div class="row block3">
-                    <div class="col-md-5 leftPerson">
-                        <img src="Images and svgs/Group-3.svg" alt="Image of Rico">
-                        <h1 class="name">
-                            Rico
-                        </h1>
-                        <h2 class="degree">
-                            BIT Information Systems
-                        </h2>
-                    </div>
-                    <div class="col-md-7">
-                        <div class="text-light"> RICO's Section Keep out! </div>
-                    </div>
-                </div>
-            </section>
-
-            <!--------- RICO SECTION END ---------->
-        </div>
-        <div id="Connor"></div>
-        <div class="panels">
-            <!--CONNOR SECTION BEGIN-->
-            <section class="block text-dark">
-                <div class="row block4">
-                    <div class="col-md-5 leftPerson">
-                        <img src="Images and svgs/Group-4.svg" alt="">
-                        <h1 class="name">
-                            Connor
-                        </h1>
-                        <h2 class="degree">
-                            BCom (Informatics) Information Systems
-                        </h2>
-                    </div>
-                    <div class="col-md-7">
-                        <div class="text-dark"> This Text is to fill space
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!--CONNOR SECTION END-->
-        </div>
-        <div id="Morris"></div>
-        <div class="panels">
-
-
-            <!--Morris's section-->
-            <section class="block text-light">
-                
-                <div class="text-light block5" id="morrisP">
-                    <svg viewBox="0 0 1920 942" fill="none" preserveAspectRatio="xMidYMin slice">
-                        <defs>
-                            <filter id="displacementFilter">
-                                <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="1" result="noise" />
-                                <feDisplacementMap in="SourceGraphic" in2="noise" scale="50" xChannelSelector="R"
-                                    yChannelSelector="G" />
-                            </filter>
-                            <mask id="circleMask">
-                                <circle cx="600" cy="800" r="0" fill="white" class="displacement" />
-                            </mask>
-                        </defs>
-                        <rect width="1920" height="942" fill="#16588E" width="100%" height="100%"
-                            mask="url(#circleMask)" />
-                    </svg>
-                    <div class="row mContent">
-                        <div class="col-md-5 leftPerson">
-                            <img src="Images and svgs/Group.svg" alt="">
-                            <h1 class="name">
-                                Morris
-                            </h1>
-                            <h2 class="degree">
-                                BCom (Informatics) Information Systems
-                            </h2>
-                        </div>
-                        <div class="col-md-7">
-                            <div class="text-light">
-                                <h2>
-                                    About me
-                                </h2>
-                                <p>I like anime</p>
-                                <!--am a informatics student that likes exploring new thing and researching about new technologies. I also like all things front end, but that doesn't mean that I hate back end-->
-                                <div class="row">
-                                    <h2>Programing languages</h2>
-                                    <div class="col-md-6">
-                                        <ul>
-                                            <li>c#</li>
-                                            <li>R</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <ul>
-                                            <li>Html, Javascript and css</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <h2>Frameworks</h2>
-                                    <div class="col-md-6">.Net Framework</div>
-                                    <div class="col-md-6">Bootstrap</div>
-                                    <br />
-                                    <h4>Still learning</h4>
-                                    <div class="col-md-6">React</div>
-                                    <div class="col-md-6">Gsap</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!--Morris' section end-->
-        </div>
-
-
-
-    </div>
-    <section id="space" class="block text-dark">
-        <div class="WorldBMW">
-            <span style="--i:1">O</span>
-            <span style="--i:2">u</span>
-            <span style="--i:3">r</span>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <span style="--i:5">W</span>
-            <span style="--i:6">o</span>
-            <span style="--i:7">r</span>
-            <span style="--i:8">l</span>
-            <span style="--i:9">d</span>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <span style="--i:11">R</span>
-            <span style="--i:12">e</span>
-            <span style="--i:13">v</span>
-            <span style="--i:14">o</span>
-            <span style="--i:15">l</span>
-            <span style="--i:16">v</span>
-            <span style="--i:17">e</span>
-            <span style="--i:18">s</span>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <span style="--i:20">A</span>
-            <span style="--i:21">r</span>
-            <span style="--i:22">o</span>
-            <span style="--i:23">u</span>
-            <span style="--i:24">n</span>
-            <span style="--i:25">d</span>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <span style="--i:27">B</span>
-            <span style="--i:28">M</span>
-            <span style="--i:29">W</span>
-        </div>
-        <div class="container">
-            <div class="sun">
-                <img src="./Images and svgs/Logo/bmw-logo.png"
-                    style="position: absolute; width: 100px; height: 100px; left: 0px;" />
-                <div class="orbit earth">
-                    <div class="globe earth">
-                        <div class="orbit moon">
-                            <div class="globe moon"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
+    <!--
     <canvas class="webgl">
 
     </canvas>
+    -->
+
+    <!-- StephenModal -->
+    <div class="modal fade modal-xl bg-opacity-0" id="stephenModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row block1 rounded-5">
+                        <div class="col-md-3 text-center">
+                            <img src="Images and svgs/Group-1.svg" width="150px" alt="Avatar of Stephen">
+                        </div>
+                        <div class="col-md-9 text-white">
+                            <h1>
+                                Stephen Swart - Bcom Informatics
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- RossModal -->
+    <div class="modal fade modal-xl bg-opacity-0" id="rossModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row block2 rounded-5">
+                        <div class="col-md-4 text-center">
+                            <img src="Images and svgs/Group-2.svg" width="150px" alt="Avatar of Ross">
+                        </div>
+                        <div class="col-md-8 text-white">
+                            <h1>
+                                Ross - BIT Information Systems
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- RicoModal -->
+    <div class="modal fade modal-xl bg-opacity-0" id="ricoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row block3 rounded-5">
+                        <div class="col-md-4 text-center">
+                            <img src="Images and svgs/Group-3.svg" width="150px" alt="Image of Rico">
+                        </div>
+                        <div class="col-md-8 text-white">
+                            <h1>
+                                Rico Mentz - BIT Information Systems
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ConnorModal -->
+    <div class="modal fade modal-xl bg-opacity-0" id="connorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row block4 rounded-5">
+                        <div class="col-md-4 text-center">
+                            <img src="Images and svgs/Group-4.svg" width="150px" alt="">
+                        </div>
+                        <div class="col-md-8 text-white">
+                            <h1>
+                                Connor - BCom Informatics
+                            </h1>                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MorrisModal -->
+    <div class="modal fade modal-xl bg-opacity-0" id="morrisModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row block5 rounded-5">
+                        <div class="col-md-12 text-white">
+                            <svg viewBox="0 0 1920 942" fill="none" preserveAspectRatio="xMidYMin slice">
+                                <defs>
+                                    <filter id="displacementFilter">
+                                        <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="1" result="noise" />
+                                        <feDisplacementMap in="SourceGraphic" in2="noise" scale="50" xChannelSelector="R"
+                                            yChannelSelector="G" />
+                                    </filter>
+                                    <mask id="circleMask">
+                                        <circle cx="600" cy="800" r="0" fill="white" class="displacement" />
+                                    </mask>
+                                </defs>
+                                <rect width="1920" height="942" fill="#16588E" width="100%" height="100%"
+                                    mask="url(#circleMask)" />
+                            </svg>
+                            <div class="row mContent">
+                                <div class="col-md-5 text-center">
+                                    <img src="Images and svgs/Group.svg" width="150px" alt="Avatar of morris">
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="text-light">
+                                        <h1 class="name">
+                                            Morris - BCom Informatics
+                                        </h1>
+                                        <h2>
+                                            About me
+                                        </h2>
+                                        <p>
+                                            I like anime
+                                        </p>
+                                        <!--am a informatics student that likes exploring new thing and researching about new technologies. I also like all things front end, but that doesn't mean that I hate back end-->
+                                        <div class="row text-start">
+                                            <h2>Programing languages</h2>
+                                            <div class="col-md-6">
+                                                <ul>
+                                                    <li>c#</li>
+                                                    <li>R</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <ul>
+                                                    <li>Html, Javascript and css</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="row text-start">
+                                            <h2>Frameworks</h2>
+                                            <div class="col-md-6">.Net Framework</div>
+                                            <div class="col-md-6">Bootstrap</div>
+                                            <br />
+                                            <h4>Still learning</h4>
+                                            <div class="col-md-6">React</div>
+                                            <div class="col-md-6">Gsap</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
+
 <!--3d stuff dont touch unless you know what you are doing-->
 <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/loaders/GLTFLoader.min.js"></script>
@@ -269,8 +199,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+
 <!--you can add anything you want below this point-->
 <script type="module" src="Scripts/sfx.js"></script>
 <script type="module" src="Scripts/3d.js"></script>
+
 
 </html>
