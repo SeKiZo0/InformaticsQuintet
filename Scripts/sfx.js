@@ -9,7 +9,7 @@ let speed = 500;
 // hills animation 
 //gsap.to("#mountain1", {scrollTrigger : { scrub : 1 }, y: 0.001 * speed})
 
-
+/*
 let panels = gsap.utils.toArray(".panels")
 
 panels.forEach((panel, i) => {
@@ -23,7 +23,7 @@ panels.forEach((panel, i) => {
     pinSpacing: false 
   });
 });
-
+*/
 
 
 
@@ -31,7 +31,7 @@ panels.forEach((panel, i) => {
 //Morris section, everyone else can put their stuff above
 
 //This is when the animation starts, it initiates the process still neeed to fix the layers
-
+/*
 let morrisTl = gsap.timeline({
   scrollTrigger: {
     trigger: "#morrisP",
@@ -42,11 +42,14 @@ let morrisTl = gsap.timeline({
     toggleActions:"play none none reverse"
   }
 })
-
+*/
 //This is a animation
-morrisTl.to('.displacement',{
-  attr: {
-    r: 600
-  },
-  duration: 2
+let morrisAnimation = gsap.fromTo('.displacement',{attr: {r:0}},{attr: {r: 600},duration: 2});
+
+morrisAnimation.pause()
+
+let morrisBTN = document.getElementById('morrisA')
+
+morrisBTN.addEventListener('click', function() {
+  morrisAnimation.play()
 })
