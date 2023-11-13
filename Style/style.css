@@ -6,6 +6,25 @@
   --darkGrey: #2d4046;
 }
 
+a{
+  text-decoration: none;
+  color: var(--darkGrey);
+  font-size: 20pt;
+  cursor: pointer;
+}
+
+.modal, .modal-content, .modal-body{
+  border: none !important;
+  padding: 0 !important;
+  border-radius: 10%;
+}
+
+.modal-open .modal-backdrop {
+  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.3);
+  opacity: 1 !important;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -59,6 +78,7 @@ svg {
   z-index: 0;
   background: #000022;
 }
+
 .panels{
   
 }
@@ -90,6 +110,11 @@ svg {
   background: linear-gradient(200deg, var(--red) 13.57%, rgb(253, 132, 132) 98.38%);
   padding: 10px;
   height: 100vh;
+}
+
+.modal .block3{
+  height: 80vh;
+  width: 80vw;
 }
 
 .block4{
