@@ -13,10 +13,15 @@ a{
   cursor: pointer;
 }
 
-.modal, .modal-content, .modal-body{
+.modal, .modal-content, .modal-body, .modal-xl, .modal-dialog{
   border: none !important;
   padding: 0 !important;
   border-radius: 10%;
+}
+
+.modal-body{
+  display: flex;
+  justify-content: center;
 }
 
 .modal-open .modal-backdrop {
@@ -36,6 +41,7 @@ body {
   background: linear-gradient(120deg, var(--blue) 13.57%, var(--lightBlue) 98.38%);
   padding: 0;
   overflow-y: auto;
+  zoom: 1.3;
 }
 
 /*dont mind the redundency*/
@@ -45,13 +51,6 @@ body {
   margin: 0;
   height: 100%;
   -webkit-overflow-scrolling: touch;
-  overflow-scrolling: touch;
-}
-
-main {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
 }
 
 .acontainer {
@@ -79,10 +78,6 @@ svg {
   background: #000022;
 }
 
-.panels{
-  
-}
-
 .block {
   width: 100vw;
   height: 100vh;
@@ -90,7 +85,6 @@ svg {
   font-size: 1.5em;
   text-align: center;
   color: white;
-  position: relative;
   box-sizing: border-box;  
 }
 
@@ -128,7 +122,7 @@ svg {
 
 .modal .block1, .block2, .block3, .block4, .block5{
   height: 80vh;
-  width: 80vw;
+  width: 100%;
 }
 
 .block5 svg {
@@ -211,8 +205,6 @@ img {
   border-radius: 50%;
   box-shadow: 0 0 100px rgb(64, 109, 255);
   position: absolute;
-  top: 225px;
-  left: 150px;
 }
 
 .globe.earth {
