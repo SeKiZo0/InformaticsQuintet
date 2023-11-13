@@ -90,6 +90,7 @@ svg {
   font-size: 1.5em;
   text-align: center;
   color: white;
+  /*position: relative;*/
   box-sizing: border-box;  
 }
 
@@ -123,6 +124,7 @@ svg {
     /*Morris special sauce*/
     position: relative;
     z-index: 0;
+    /*left: 0px;*/
 }
 
 .modal .block1, .block2, .block3, .block4, .block5{

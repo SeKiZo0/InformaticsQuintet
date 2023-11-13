@@ -10,27 +10,12 @@ gsap.registerPlugin(ScrollTrigger);
 //gsap.to("#mountain1", {scrollTrigger : { scrub : 1 }, y: 0.001 * speed})
 
 
-//let panels = gsap.utils.toArray(".panels")
-//
-//panels.forEach((panel, i) => {
-//  
-//  ScrollTrigger.create({
-//    trigger: panel,
-//    start: "top top", 
-//    pin: i === panels.length -1 ? false : true, 
-//    //end:"bottom ",
-//    snap: 1,
-//    pinSpacing: false 
-//  });
-//});
-
-
-
 
 
 //Morris section, everyone else can put their stuff above
 
 //This is when the animation starts, it initiates the process still neeed to fix the layers
+
 
 let morrisAnimation = gsap.fromTo('.displacement',{attr: {r:0}},{attr: {r: 600},duration: 2});
 
