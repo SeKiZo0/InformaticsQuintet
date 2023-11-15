@@ -96,61 +96,50 @@ svg {
 
 .block1{
   background: linear-gradient(200deg, var(--lightBlue) 13.57%, rgb(67, 139, 247) 98.38%);
-  padding: 10px;
-  height: 100vh;
 }
 
 .block2{
   background: linear-gradient(200deg, var(--blue) 13.57%, rgb(79, 89, 233) 98.38%);
-  padding: 10px;
-  height: 100vh;
 }
 
 .block3{
   background: linear-gradient(200deg, var(--red) 13.57%, rgb(253, 132, 132) 98.38%);
-  padding: 10px;
-  height: 100vh;
 }
 
 .block4{
   background: linear-gradient(200deg, var(--grey) 13.57%, #8a8a8a 98.38%);
-  padding: 10px;
-  height: 100vh;
-}
-
-.block5{
-    background: linear-gradient(200deg, var(--darkGrey) 13.57%, #363636 98.38%); 
-    height: 100vh;
-    /*Morris special sauce*/
-    position: relative;
-    z-index: 0;
-    /*left: 0px;*/
 }
 
 .modal .block1, .block2, .block3, .block4, .block5{
   height: 70vh;
+  padding: 10px;
   width: 100%;
+}
+/*Morris css start*/
+
+.block5{
+  background: linear-gradient(200deg, var(--darkGrey) 13.57%, #363636 98.38%); 
+  /*Morris special sauce*/
+  z-index: 0;
+  overflow-y: scroll;
 }
 
 .block5 svg {
   z-index: 1; /* or any positive value that works for your layout */
 }
 
-#morrisP {
-  position: relative; /* or other appropriate positioning */
-  z-index: 0; /* Make sure it's not higher than necessary */
-}
-
 .mContent{
   padding: 10px;
   z-index: 2;
-  position: absolute;
+  position: relative;
+  height: 500vh;
+  overflow-x: hidden;
 }
 
-body {
-  overflow-x: hidden;
-  overflow-y: scroll;
+.spacer{
+  height: 20vh;
 }
+/*Morris css end*/
 
 img {
   height: 70vh;
