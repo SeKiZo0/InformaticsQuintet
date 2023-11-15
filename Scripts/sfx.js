@@ -26,25 +26,33 @@ morrisAnimation2.pause()
 let morrisBTN = document.getElementById('morrisA')
 
 morrisBTN.addEventListener('click', function() {
-  ScrollTrigger.refresh();
+
   gsap.utils.toArray(".mContainer").forEach((container) => {
     
     let morrisTl = gsap.timeline({
       scrollTrigger: {
         scroller: ".block5",
         trigger: container,
-        start: "-20% top",
+        start: "-100% top",
         scrub: false,
         markers: true,
         toggleActions:"play none none reverse"
       }
     })
   
-  morrisTl.fromTo(container,{x:-1000},{x:500, duration: 2})
+  morrisTl.fromTo(container,{x:-500},{x:500, duration: 1})
   
   })
   morrisAnimation.play()
   morrisAnimation2.play()
   
 })
+
+var MorrisModal = new bootstrap.Modal(document.getElementById('morrisModal'));
+
+// Event listener for modal shown event
+MorrisModal._element.addEventListener('shown.bs.modal', function () {
+    // Your code to handle modal completion
+    ScrollTrigger.refresh();
+});
 
