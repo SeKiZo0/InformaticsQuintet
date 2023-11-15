@@ -26,24 +26,25 @@ morrisAnimation2.pause()
 let morrisBTN = document.getElementById('morrisA')
 
 morrisBTN.addEventListener('click', function() {
+  ScrollTrigger.refresh();
   gsap.utils.toArray(".mContainer").forEach((container) => {
-
+    
     let morrisTl = gsap.timeline({
       scrollTrigger: {
         scroller: ".block5",
         trigger: container,
-        start: "20% top",
+        start: "-20% top",
         scrub: false,
         markers: true,
         toggleActions:"play none none reverse"
       }
     })
   
-  morrisTl.fromTo(container,{x:-1000, y:200},{x:500,y:200, duration: 2})
+  morrisTl.fromTo(container,{x:-1000},{x:500, duration: 2})
   
   })
   morrisAnimation.play()
   morrisAnimation2.play()
-
+  
 })
 
