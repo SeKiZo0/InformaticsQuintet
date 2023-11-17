@@ -1,4 +1,9 @@
 :root {
+  /*TEMPLATE VARIABLES*/
+  --primary-background: #282828;
+
+  --font: Source Code Pro;
+
   --lightBlue: #81c4ff;
   --blue: #16588e;
   --red: #e7222e;
@@ -8,7 +13,7 @@
 
 a{
   text-decoration: none;
-  color: var(--darkGrey);
+  color: white;
   font-size: 20pt;
   cursor: pointer;
 }
@@ -37,11 +42,11 @@ html {
 
 body {
   margin: 0;
-  background: #fff;
+  background: var(--primary-background);
+  color: white;
   font-family: Arial, Helvetica, sans-serif;
-  background: linear-gradient(120deg, var(--blue) 13.57%, var(--lightBlue) 98.38%);
   padding: 0;
-  overflow-y: auto;
+  overflow-x: hidden;
   padding-right: 0px !important;
 }
 
@@ -279,3 +284,35 @@ img {
 }
 
 /*Connor CSS End*/
+
+/*RICO CSS*/
+
+.avatar-circle{
+  height: 350px;
+  width: 350px;
+  background-color: rgb(87, 87, 87);
+  border-radius: 50%;
+  display: flex;
+  margin: 20px;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.avatar-circle:hover{
+  background-color: rgb(78, 78, 78);
+  box-shadow: 0px 0px 50px inset var(--primary-background);
+}
+
+.icon{
+  width: 75%;
+  z-index: 1;
+  height: auto;
+}
+
+#avatar-section{
+  display: flex;
+  flex-direction: row !important;
+  justify-content: center;
+  align-items: center;
+}
