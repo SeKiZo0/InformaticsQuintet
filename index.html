@@ -16,25 +16,35 @@
 </head>
 
 <body>
-
-    <header class="h-100 d-flex flex-column text-center justify-content-center" style="background-color: #fff;">
-        <a class="mb-5" style="font-size: 25pt; font-weight: 600; color: rgb(59, 59, 59);"
-            href="./templates/group.html">INFORMATICS PENTAD</a>
-        <div class="pt-5 d-flex justify-content-around w-100">
-            <a data-bs-toggle="modal" data-bs-target="#stephenModal">Stephen</a>
-            <a data-bs-toggle="modal" data-bs-target="#rossModal">Ross</a>
-            <a data-bs-toggle="modal" data-bs-target="#ricoModal">Rico</a>
-            <a data-bs-toggle="modal" data-bs-target="#connorModal">Connor</a>
-            <a data-bs-toggle="modal" data-bs-target="#morrisModal" id="morrisA">Morris</a>
-        </div>
+    <!--HEADER START-->
+    <header class="h-100 d-flex align-items-center">
+        <a style="font-size: 90px; font-weight: 600; margin: 150px;"
+        href="./templates/group.html">INFORMATICS <br /> QUINTET</a>
+        <img src="./Images and svgs/lines.png" class="h-100" style="right: -100px;" alt="BMW M lines">
     </header>
+    <!--HEADER END-->
 
+    <!--WHO WE ARE SECTION START-->
+    <section class="h-100 w-100 text-center" style="position: relative;">
+        <h1 style="font-size: 50px; font-weight: 600; margin-top: 150px;">WHO WE ARE</h1>
+        <div class="container d-flex justify-content-center align-items-center" style="height: 90%;">
+            <img src="./Images and svgs/exploded-car.png" style="height: 500px; width: auto;">
+        </div>
+    </section>
+    <!--WHO WE ARE SECTION END-->
 
-    <!--
-    <canvas class="webgl">
-
-    </canvas>
-    -->
+    <!--AVATAR SECTION START-->
+    <section class="h-100 d-flex text-center justify-content-center" style="position: relative;">
+        <img src="./Images and svgs/lines.png" class="float-end" style="position: absolute; z-index: 0; height: 100%; width: auto;" alt="BMW M lines">
+        <div class="w-100" id="avatar-section">
+            <a data-bs-toggle="modal" data-bs-target="#stephenModal" class="avatar-circle"><img src="./Images and svgs/avatars/stephen.png" class="icon" alt="stephen-avatar"></a>
+            <a data-bs-toggle="modal" data-bs-target="#rossModal" class="avatar-circle"><img src="./Images and svgs/avatars/ross.png" class="icon" alt="ross-avatar"></a>
+            <a data-bs-toggle="modal" data-bs-target="#ricoModal" class="avatar-circle"><img src="./Images and svgs/avatars/rico.png" class="icon" alt="rico-avatar"></a>
+            <a data-bs-toggle="modal" data-bs-target="#connorModal" class="avatar-circle"><img src="./Images and svgs/avatars/connor.png" class="icon" alt="connor-avatar"></a>
+            <a data-bs-toggle="modal" data-bs-target="#morrisModal" id="morrisA" class="avatar-circle"><img src="./Images and svgs/avatars/morris.png" class="icon" alt="morris-avatar"></a>
+        </div>
+    </section>
+    <!--AVATAR SECTION END-->
 
     <!-- StephenModal -->
     <div class="modal fade modal-xl bg-opacity-0" id="stephenModal" tabindex="-1" role="dialog"
@@ -179,31 +189,6 @@
                                         <li>GSAP</li>
                                     </ul>
                                 </div>
-                                <!--am a informatics student that likes exploring new thing and researching about new technologies. I also like all things front end, but that doesn't mean that I hate back end
-                                        <div class="row text-start">
-                                            <h2>Programing languages</h2>
-                                            <div class="col-md-6">
-                                                <ul>
-                                                    <li>c#</li>
-                                                    <li>R</li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <ul>
-                                                    <li>Html, Javascript and css</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="row text-start">
-                                            <h2>Frameworks</h2>
-                                            <div class="col-md-6">.Net Framework</div>
-                                            <div class="col-md-6">Bootstrap</div>
-                                            <br />
-                                            <h4>Still learning</h4>
-                                            <div class="col-md-6">React</div>
-                                            <div class="col-md-6">Gsap</div>
-                                        </div>
-                                    -->
                             </div>
                         </div>
                     </div>
@@ -214,15 +199,6 @@
 
 </body>
 
-<!--3d stuff dont touch unless you know what you are doing
-<script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/loaders/GLTFLoader.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/loaders/FBXLoader.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/libs/fflate.min.js"></script>
-<script type="module" src="Scripts/3d.js"></script>
--->
-
-
 <!--This is gsap-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -230,7 +206,5 @@
 
 <!--you can add anything you want below this point-->
 <script type="module" src="Scripts/sfx.js"></script>
-
-
 
 </html>
