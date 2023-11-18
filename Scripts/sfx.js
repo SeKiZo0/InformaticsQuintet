@@ -11,7 +11,7 @@ let carA = gsap.timeline({
     start: "top bottom",
     scrub: false,
     toggleActions: "restart pause resume pause",
-    markers: true
+    //markers: true
   }
 })
 
@@ -34,17 +34,17 @@ carA.fromTo(".infoCard",
   { xPercent: 0 },
   7)
 var lightCounter = 1
-  gsap.utils.toArray(".light").forEach((light) => {
+  gsap.utils.toArray(".light").forEach((light, i) => {
     let lightsTl = gsap.timeline({
       scrollTrigger: {
         trigger: "#carContainer",
         start: "top bottom",
         scrub: false,
         toggleActions: "restart pause resume pause",
-        markers: true
+        //markers: true
       }
     })
-
+console.log(i)
     lightsTl.fromTo(light,{backgroundColor: "grey"},{backgroundColor: "red", delay:lightCounter})
     console.log(lightCounter += 1)
     if (lightCounter == 6) {
@@ -73,7 +73,7 @@ morrisBTN.addEventListener('click', function () {
         start: "-100% top",
         scrub: false,
         //markers: true,
-
+        toggleActions: "restart pause resume pause",
       }
     })
 
@@ -82,6 +82,20 @@ morrisBTN.addEventListener('click', function () {
   })
 
   morrisAnimation.play()
+})
+
+gsap.utils.toArray(".avatar-circle").forEach((avatar) => {
+  let avatarTl = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#avatars",
+      start: "top 25%",
+      scrub: false,
+      //markers: true,
+      toggleActions: "restart pause resume pause",
+    }
+  })
+
+  avatarTl.from(avatar, {y:100, opacity: 0})
 })
 
 
@@ -94,3 +108,23 @@ MorrisModal._element.addEventListener('shown.bs.modal', function () {
   ScrollTrigger.refresh();
 });
 
+
+const MorrisLogo = document.querySelectorAll("#morrisLogo path");
+
+gsap.utils.toArray(MorrisLogo).forEach((letter,i) => {
+  let letterTl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".mAbout",
+      start: "-25% top",
+      scrub: false,
+      //markers: true,
+      toggleActions: "restart pause resume pause",
+    }
+  })
+
+letterTl.fromTo(letter, {strokeDashoffset:(MorrisLogo[i].getTotalLength())},{strokeDashoffset:0, duration:1, delay: 1})
+})
+/*
+for(let i=0; i<MorrisLogo.length; i++){
+    console.log(`Letter ${i} is ${MorrisLogo[i].getTotalLength()}`)
+}*/

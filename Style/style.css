@@ -130,12 +130,11 @@ svg {
   padding: 10px;
   z-index: 2;
   position: relative;
-  height: 500vh;
   overflow-x: hidden;
 }
 
 .mContainer{
-  height: 200px;
+  height: 70vh;
 }
 
 #carContainer{
@@ -173,6 +172,44 @@ position: relative;
   height: 50px;
   width: 50px;
   border-radius: 50%;
+}
+
+#morrisLogo{
+  position: absolute;
+  top: 0px;
+  height: 70px;
+  width: 300px;
+  left: 0px
+}
+
+#morrisLogo path:nth-child(1) {
+stroke-dasharray: 491;
+stroke-dashoffset: 491;
+}
+#morrisLogo path:nth-child(2){
+  stroke-dasharray: 241;
+stroke-dashoffset: 241;
+}
+#morrisLogo path:nth-child(3){
+  stroke-dasharray: 485;
+stroke-dashoffset: 485;
+}
+#morrisLogo path:nth-child(4){
+  stroke-dasharray: 485;
+stroke-dashoffset: 485;
+}
+#morrisLogo path:nth-child(5){
+  stroke-dasharray: 450;
+stroke-dashoffset: 250;
+}
+#morrisLogo path:nth-child(6){
+  stroke-dasharray: 667;
+stroke-dashoffset: 667;
+}
+
+
+#m5Morris{
+  mix-blend-mode: multiply;
 }
 /*Morris css end*/
 
