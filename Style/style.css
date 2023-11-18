@@ -368,10 +368,11 @@ img {
   background-color: rgb(87, 87, 87);
   border-radius: 50%;
   display: flex;
-  margin: 20px;
+  margin: 17px;
   justify-content: center;
   align-items: center;
-  z-index: 1;
+  /*z-index: 1;*/
+  aspect-ratio: 1;
 }
 
 .avatar-circle:hover{
@@ -387,7 +388,7 @@ img {
 
 #avatar-section{
   display: flex;
-  flex-direction: row !important;
-  justify-content: center;
+  /*flex-direction: row !important;
+  justify-content: center;*/
   align-items: center;
 }

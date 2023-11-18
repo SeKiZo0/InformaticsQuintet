@@ -8,8 +8,11 @@ gsap.registerPlugin(ScrollTrigger);
 let carA = gsap.timeline({
   scrollTrigger: {
     trigger: "#carContainer",
+    //first one is the part of the trigger that you want to start your animation at and the second one is the position on the viewport
     start: "top bottom",
+    //set this to true if tou want your animation to scroll based, in other words you want to animate a progress bar that extends or shortens depending on the position of the page you're on
     scrub: false,
+    //rather google this(or use from these examples https://codepen.io/GreenSock/pen/LYVKWGo)
     toggleActions: "restart pause resume pause",
     //markers: true
   }
@@ -21,20 +24,21 @@ carA.fromTo("#car1",
   //ending value, here you will also have to specify duration and ease(https://gsap.com/docs/v3/Eases/)
   { x: 2000, duration: 0.9, ease: "power3.in", }
   //This is the position in the timeline specified in seconds(https://gsap.com/docs/v3/GSAP/Timeline/)
-  , 4)
+  , 2.5)
 
 carA.fromTo("#car2",
   { x: -0 },
   { x: 2000, duration: 0.9, ease: "power3.in", },
-  4.1)
+  2.7)
 
 carA.fromTo(".infoCard",
 //uses percent instead of px(https://gsap.com/community/forums/topic/8148-animating-x-with-percentage/#:~:text=GSAP%20can%20do%20percentage%20x,and%20yPercent%20for%20responsive%20animations.&text=Codepen%20example%20of%20interactive%20responsive,HTML)
   { xPercent: -100 },
   { xPercent: 0 },
-  5)
+  3.6)
 
-var lightCounter = 1
+var lightCounter = 0.7
+//for loop 
   gsap.utils.toArray(".light").forEach((light, i) => {
     let lightsTl = gsap.timeline({
       scrollTrigger: {
@@ -45,15 +49,16 @@ var lightCounter = 1
         //markers: true
       }
     })
-console.log(i)
+    console.log(i)
     lightsTl.fromTo(light,{backgroundColor: "grey"},{backgroundColor: "red", delay:lightCounter})
-    console.log(lightCounter += 1)
-    if (lightCounter == 4) {
+    console.log(lightCounter += 0.7)
+    if (lightCounter >= 2.1) {
       lightsTl.fromTo(".light",{backgroundColor: "grey"},{backgroundColor: "green"})
     }
   })
 
- 
+ //the easiest but not the best way(depending on what you want to do) of using GSAP for animations is to use 
+ /*gsap.fromTo(".classOfYourChoice(ids also work)",{cssAttribute:beforeValue},{cssAttribute:afterValue, duration:inSeconds, delay:inSeconds})*/
 //Morris section, everyone else can put their stuff above
 //TODO I need to fix the rest of this
 
