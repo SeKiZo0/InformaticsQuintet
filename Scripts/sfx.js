@@ -19,20 +19,21 @@ carA.fromTo("#car1",
   //starting value, you can specify anything you want to change, keep in mind that this works similar to a transform animation
   { x: -0 },
   //ending value, here you will also have to specify duration and ease(https://gsap.com/docs/v3/Eases/)
-  { x: 2000, duration: 1, ease: "power3.in", }
+  { x: 2000, duration: 0.9, ease: "power3.in", }
   //This is the position in the timeline specified in seconds(https://gsap.com/docs/v3/GSAP/Timeline/)
-  , 6)
+  , 4)
 
 carA.fromTo("#car2",
   { x: -0 },
-  { x: 2000, duration: 1, ease: "power3.in", },
-  6.1)
+  { x: 2000, duration: 0.9, ease: "power3.in", },
+  4.1)
 
 carA.fromTo(".infoCard",
 //uses percent instead of px(https://gsap.com/community/forums/topic/8148-animating-x-with-percentage/#:~:text=GSAP%20can%20do%20percentage%20x,and%20yPercent%20for%20responsive%20animations.&text=Codepen%20example%20of%20interactive%20responsive,HTML)
   { xPercent: -100 },
   { xPercent: 0 },
-  7)
+  5)
+
 var lightCounter = 1
   gsap.utils.toArray(".light").forEach((light, i) => {
     let lightsTl = gsap.timeline({
@@ -47,7 +48,7 @@ var lightCounter = 1
 console.log(i)
     lightsTl.fromTo(light,{backgroundColor: "grey"},{backgroundColor: "red", delay:lightCounter})
     console.log(lightCounter += 1)
-    if (lightCounter == 6) {
+    if (lightCounter == 4) {
       lightsTl.fromTo(".light",{backgroundColor: "grey"},{backgroundColor: "green"})
     }
   })
