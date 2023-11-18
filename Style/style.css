@@ -62,13 +62,6 @@ body {
   height: 100%;
   -webkit-overflow-scrolling: touch;
 }
-
-.acontainer {
-  width: 100%;
-  margin: 0%;
-  padding: 0%;
-}
-
 svg {
   left: -20%;
   width: 100%;
@@ -141,14 +134,46 @@ svg {
   overflow-x: hidden;
 }
 
-.spacer{
-  height: 20vh;
-}
-
 .mContainer{
   height: 200px;
 }
 
+#carContainer{
+  height: 100vh;
+  align-items: center;
+}
+
+.infoCard{
+  z-index: 2;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  background-color: var(--blue);
+  /*display: none;*/
+}
+
+.raceSection{
+position: relative;
+}
+
+.lights{
+  position: absolute;
+  right: 10px;
+  top:10px;
+  background-color: black;
+  display: flex;
+  height: 70px;
+  width: 310px;
+  padding: 10px;
+  gap:10px;
+}
+
+.light{
+  background-color: var(--darkGrey);
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
 /*Morris css end*/
 
 img {

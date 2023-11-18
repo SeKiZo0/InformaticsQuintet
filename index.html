@@ -18,8 +18,8 @@
 <body>
     <!--HEADER START-->
     <header class="h-100 d-flex align-items-center">
-        <a style="font-size: 90px; font-weight: 600; margin: 150px;"
-        href="./templates/group.html">INFORMATICS <br /> QUINTET</a>
+        <a style="font-size: 90px; font-weight: 600; margin: 150px;" href="./templates/group.html">INFORMATICS <br />
+            QUINTET</a>
         <img src="./Images and svgs/lines.png" class="h-100" style="right: -100px;" alt="BMW M lines">
     </header>
     <!--HEADER END-->
@@ -35,28 +35,46 @@
 
     <!--AVATAR SECTION START-->
     <section class="h-100 d-flex text-center justify-content-center" style="position: relative;">
-        <img src="./Images and svgs/lines.png" class="float-end" style="position: absolute; z-index: 0; height: 100%; width: auto;" alt="BMW M lines">
+        <img src="./Images and svgs/lines.png" class="float-end"
+            style="position: absolute; z-index: 0; height: 100%; width: auto;" alt="BMW M lines">
         <div class="w-100" id="avatar-section">
-            <a data-bs-toggle="modal" data-bs-target="#stephenModal" class="avatar-circle"><img src="./Images and svgs/avatars/stephen.png" class="icon" alt="stephen-avatar"></a>
-            <a data-bs-toggle="modal" data-bs-target="#rossModal" class="avatar-circle"><img src="./Images and svgs/avatars/ross.png" class="icon" alt="ross-avatar"></a>
-            <a data-bs-toggle="modal" data-bs-target="#ricoModal" class="avatar-circle"><img src="./Images and svgs/avatars/rico.png" class="icon" alt="rico-avatar"></a>
-            <a data-bs-toggle="modal" data-bs-target="#connorModal" class="avatar-circle"><img src="./Images and svgs/avatars/connor.png" class="icon" alt="connor-avatar"></a>
-            <a data-bs-toggle="modal" data-bs-target="#morrisModal" id="morrisA" class="avatar-circle"><img src="./Images and svgs/avatars/morris.png" class="icon" alt="morris-avatar"></a>
+            <a data-bs-toggle="modal" data-bs-target="#stephenModal" class="avatar-circle"><img
+                    src="./Images and svgs/avatars/stephen.png" class="icon" alt="stephen-avatar"></a>
+            <a data-bs-toggle="modal" data-bs-target="#rossModal" class="avatar-circle"><img
+                    src="./Images and svgs/avatars/ross.png" class="icon" alt="ross-avatar"></a>
+            <a data-bs-toggle="modal" data-bs-target="#ricoModal" class="avatar-circle"><img
+                    src="./Images and svgs/avatars/rico.png" class="icon" alt="rico-avatar"></a>
+            <a data-bs-toggle="modal" data-bs-target="#connorModal" class="avatar-circle"><img
+                    src="./Images and svgs/avatars/connor.png" class="icon" alt="connor-avatar"></a>
+            <a data-bs-toggle="modal" data-bs-target="#morrisModal" id="morrisA" class="avatar-circle"><img
+                    src="./Images and svgs/avatars/morris.png" class="icon" alt="morris-avatar"></a>
         </div>
     </section>
     <!--AVATAR SECTION END-->
     <!--Drag race section-->
-    <div id="carContainer1">
-        <div class="car1">    
-            <object id="car1" data="Images and svgs/M5.svg" type="image/svg+xml"></object>
-        
+    <section class="raceSection">
+        <!--TODO Change this to a proper class name-->
+        <div class="infoCard">
+            This contains info
         </div>
-    </div>
-    <div class="carContainer2">
-        <div class="car2">
-            <object id="car2" data="Images and svgs/i8.svg" type="image/svg+xml"></object>
+        <div class="lights">
+            <div class="light"></div>
+            <div class="light"></div>
+            <div class="light"></div>
+            <div class="light"></div>
+            <div class="light"></div>
         </div>
-    </div>
+        <div id="carContainer">
+            <div class="car">
+                <object id="car1" data="Images and svgs/M5.svg" type="image/svg+xml" height="200"></object>
+            </div>
+            <hr />
+            <div class="car">
+                <object id="car2" data="Images and svgs/i8.svg" type="image/svg+xml" height="200"></object>
+            </div>
+        </div>
+    </section>
+
     <!--Drag end-->
 
     <!-- StephenModal -->
@@ -169,7 +187,7 @@
                             </svg>
 
                             <div class="mContent">
-                                
+
                                 <div class="mContainer mAbout">
                                     <ul>
                                         <li>.Net Framework</li>
