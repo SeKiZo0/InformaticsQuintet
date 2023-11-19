@@ -27,7 +27,8 @@ a{
 .modal-body{
   display: flex;
   justify-content: center;
-  overflow: hidden;
+  overflow-x: hidden;
+  box-shadow: 0px 0px 150px rgba(0, 0, 0, 0.7);
 }
 
 .modal-open .modal-backdrop {
@@ -83,7 +84,6 @@ svg {
 
 .block {
   width: 100vw;
-  height: 100vh;
   font-weight: 600;
   font-size: 1.5em;
   text-align: center;
@@ -101,25 +101,31 @@ svg {
 }
 
 .block3{
-  background: linear-gradient(200deg, var(--red) 13.57%, rgb(253, 132, 132) 98.38%);
+  background: rgb(188, 60, 60) 98.38%;
 }
 
 .block4{
   background: linear-gradient(200deg, var(--grey) 13.57%, #8a8a8a 98.38%);
 }
 
-.modal .block1, .block2, .block3, .block4, .block5{
+.block1, .block2, .block3, .block4, .block5{
   height: 70vh;
   padding: 10px;
   width: 100%;
+  overflow-y: scroll;
+  border-radius: 50px;
 }
+
+.block3{
+  box-shadow: 0px 0px 500px inset rgba(0, 0, 0, 0.7);
+}
+
 /*Morris css start*/
 
 .block5{
   background: linear-gradient(200deg, var(--darkGrey) 13.57%, #363636 98.38%); 
   /*Morris special sauce*/
   z-index: 0;
-  overflow-y: scroll;
 }
 
 .block5 svg {
