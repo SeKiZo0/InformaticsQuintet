@@ -70,12 +70,12 @@ let morrisBTN = document.getElementById('morrisA')
 
 morrisBTN.addEventListener('click', function () {
 
-  gsap.utils.toArray(".mContainer").forEach((container) => {
+
 
     let morrisTl = gsap.timeline({
       scrollTrigger: {
         scroller: ".block5",
-        trigger: container,
+        trigger: ".mContainer",
         start: "-100% top",
         scrub: false,
         //markers: true,
@@ -83,9 +83,9 @@ morrisBTN.addEventListener('click', function () {
       }
     })
 
-    morrisTl.fromTo(container, { x: -50, opacity: 0 }, { x: 50, opacity: 1, duration: 1 })
+    morrisTl.fromTo(".mContainer", { x: -50, opacity: 0 }, { x: 50, opacity: 1, duration: 1 })
 
-  })
+
 
   morrisAnimation.play()
 })
