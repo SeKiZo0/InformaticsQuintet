@@ -146,6 +146,7 @@ svg {
 
 .mContainer{
   height: 70vh;
+  position: relative;
 }
 
 #carContainer{
@@ -234,6 +235,11 @@ stroke-dashoffset: 667;
 
 #m5Morris{
   mix-blend-mode: multiply;
+}
+
+#MorrisText{
+  position: absolute;
+  bottom: 10%;
 }
 /*Morris css end*/
 

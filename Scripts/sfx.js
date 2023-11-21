@@ -57,39 +57,7 @@ var lightCounter = 0.7
     }
   })
 
- //the easiest but not the best way(depending on what you want to do) of using GSAP for animations is to use 
- /*gsap.fromTo(".classOfYourChoice(ids also work)",{cssAttribute:beforeValue},{cssAttribute:afterValue, duration:inSeconds, delay:inSeconds})*/
-//Morris section, everyone else can put their stuff above
-//TODO I need to fix the rest of this
-
-let morrisAnimation = gsap.fromTo('.displacement',{attr: {r:0}},{attr: {r: 600},duration: 2});
-
-morrisAnimation.pause()
-
-let morrisBTN = document.getElementById('morrisA')
-
-morrisBTN.addEventListener('click', function () {
-
-
-
-    let morrisTl = gsap.timeline({
-      scrollTrigger: {
-        scroller: ".block5",
-        trigger: ".mContainer",
-        start: "-100% top",
-        scrub: false,
-        //markers: true,
-        toggleActions: "restart pause resume pause",
-      }
-    })
-
-    morrisTl.fromTo(".mContainer", { x: -50, opacity: 0 }, { x: 50, opacity: 1, duration: 1 })
-
-
-
-  morrisAnimation.play()
-})
-
+  let avatarDelay=0
 gsap.utils.toArray(".avatar-circle").forEach((avatar) => {
   let avatarTl = gsap.timeline({
     scrollTrigger: {
@@ -101,9 +69,43 @@ gsap.utils.toArray(".avatar-circle").forEach((avatar) => {
     }
   })
 
-  avatarTl.from(avatar, {y:100, opacity: 0})
+  avatarTl.from(avatar, {y:100, opacity: 0, delay:avatarDelay})
+  avatarDelay += 0.1
 })
 
+ //the easiest but not the best way(depending on what you want to do) of using GSAP for animations is to use 
+ /*gsap.fromTo(".classOfYourChoice(ids also work)",{cssAttribute:beforeValue},{cssAttribute:afterValue, duration:inSeconds, delay:inSeconds})*/
+//Morris section, everyone else can put their stuff above
+//TODO I need to fix the rest of this
+
+//let morrisAnimation = gsap.fromTo('.displacement',{attr: {r:0}},{attr: {r: 600},duration: 2});
+
+//morrisAnimation.pause()
+
+let morrisBTN = document.getElementById('morrisA')
+
+morrisBTN.addEventListener('click', function () {
+
+    let morrisTl = gsap.timeline({
+      scrollTrigger: {
+        scroller: ".block5",
+        trigger: ".mContainer",
+        start: "-100% top",
+        scrub: false,
+        //markers: true,
+        toggleActions: "restart pause resume pause",
+      }
+    })
+    morrisTl.fromTo('.displacement',{attr: {r:0}},{attr: {r: 600},duration: 2});
+    morrisTl.fromTo(".mContainer", { x: -50, opacity: 0 }, { x: 50, opacity: 1, duration: 1 },1);
+    morrisTl.fromTo("#m5Morris",{ x:0, opacity:1, scale:1} ,{ x:1000, scale:2, opacity:0, duration:1, delay:1},2);
+    morrisTl.fromTo("#MorrisText", { x: -50, opacity: 0 }, { x: 5, opacity: 1, duration: 1 },3);
+    morrisTl.to(".displacement",{attr: {r: 800},duration: 2},3);
+
+
+
+  //morrisAnimation.play()
+})
 
 var MorrisModal = new bootstrap.Modal(document.getElementById('morrisModal'));
 
