@@ -73,6 +73,17 @@ gsap.utils.toArray(".avatar-circle").forEach((avatar) => {
   avatarDelay += 0.1
 })
 
+//RICO ANIMATIONS (Basically just copied from morris ლ(́◉◞౪◟◉‵ლ))
+
+let ricoBtn = document.getElementById('rico');
+
+ricoBtn.addEventListener('click', function () {
+  //ACTIONS
+  gsap.fromTo("#bike",  {opacity: 0, x: 200} ,{opacity: 1, x: 0, duration: 2, delay: 0.5});
+  gsap.fromTo("#ricoTitle", {opacity: 0, y: -50, x: -50}, {opacity: 1, y: 0, x: 0, duration: 2, delay: 0.5});
+  gsap.fromTo("#ricoArrow", {opacity: 0, y: -20}, { opacity: 1, y: 0, duration: 2, delay: 2.5});
+})
+
  //the easiest but not the best way(depending on what you want to do) of using GSAP for animations is to use 
  /*gsap.fromTo(".classOfYourChoice(ids also work)",{cssAttribute:beforeValue},{cssAttribute:afterValue, duration:inSeconds, delay:inSeconds})*/
 //Morris section, everyone else can put their stuff above
