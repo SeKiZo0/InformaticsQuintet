@@ -37,23 +37,28 @@ a{
   opacity: 1 !important;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   margin: 0;
   background: var(--primary-background);
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   padding: 0;
-  overflow-x: hidden;
   padding-right: 0px !important;
+  overflow-x: hidden;
+}
+
+body, html{
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-snap-align: start;
 }
 
 ::-webkit-scrollbar{
   display: none;
-}
+} 
 
 /*dont mind the redundency*/
 
