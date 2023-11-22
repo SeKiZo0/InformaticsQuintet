@@ -387,8 +387,8 @@ img {
 /*RICO CSS*/
 
 .avatar-circle{
-  height: 350px;
-  width: 350px;
+  height: 300px;
+  width: 300px;
   background-color: rgb(87, 87, 87);
   border-radius: 50%;
   display: flex;
