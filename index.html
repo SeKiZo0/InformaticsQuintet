@@ -17,11 +17,11 @@
 
 <body>
     <!--HEADER START-->
-    <section>
+    <section class="h-100">
         <header class="h-100 d-flex align-items-center">
-            <a style="font-size: 90px; font-weight: 600; margin: 150px;" href="./templates/group.html">INFORMATICS <br />
-                QUINTET</a>
-            <img src="./Images and svgs/lines.svg" class="h-100" style="right: 10%;" alt="BMW M lines">
+            <a style="font-size: 60px; font-weight: 400; margin: 150px;" href="./templates/group.html">INFORMATICS <br />
+                <img src="./Images and svgs/Logo/ournewlogo.png" style="height: 60px; width: 65px; margin-bottom: 15px;" alt="InformaticsPentadLogo">UINTET</a>
+            <img src="./Images and svgs/lines.svg" class="h-100" style="right: 10%; top: 0px;" alt="BMW M lines">
         </header>
     </section>
     <!--HEADER END-->
@@ -44,7 +44,7 @@
                     src="./Images and svgs/avatars/stephen.png" class="icon" alt="stephen-avatar"></a>
             <a data-bs-toggle="modal" data-bs-target="#rossModal" class="avatar-circle col-md-2"><img
                     src="./Images and svgs/avatars/ross.png" class="icon" alt="ross-avatar"></a>
-            <a data-bs-toggle="modal" data-bs-target="#ricoModal" class="avatar-circle col-md-2"><img
+            <a data-bs-toggle="modal" data-bs-target="#ricoModal" id="rico" class="avatar-circle col-md-2"><img
                     src="./Images and svgs/avatars/rico.png" class="icon" alt="rico-avatar"></a>
             <a data-bs-toggle="modal" data-bs-target="#connorModal" class="avatar-circle col-md-2"><img
                     src="./Images and svgs/avatars/connor.png" class="icon" alt="connor-avatar"></a>
@@ -129,60 +129,70 @@
             <div class="modal-content">
                 <div class="modal-body">
                     <div class="block3 rounded-5">
-                        <div class="text-white" style="height: 100%;">
-                            <h1 class="text-start p-4 pb-1">
-                                Rico
-                            </h1>
-                            <img src="./Images and svgs/hp4.png" alt="BMW HP4"
-                                style="width: 100%; height: auto; margin-top: -100px; margin-bottom: -100px;">
-                            <div class="row p-5">
-                                <h3>My Skills</h3>
-                                <ul class="p-5 pt-2">
-                                    <li>
-                                        Full-stack web application development (ASP.NET, Python, Django, Svelte)
-                                    </li>
-                                    <li>
-                                        Production DBMS
-                                    </li>
-                                    <li>
-                                        Web-scraping
-                                    </li>
-                                </ul>
-
-                                <br />
-                                <br />
-
-                                <h3>My Qualifications</h3>
-
-                                <ul class="p-5 pt-2">
-                                    <li>
-                                        Microsoft Azure Fundamentals Certified
-                                    </li>
-                                    <li>
-                                        Microsoft Azure Developer Associate Certified
-                                    </li>
-                                    <li>
-                                        Microsoft Technology Associate Certificate (Advanced Python)
-                                    </li>
-                                    <li>
-                                        FCC - Responsive Web Design Certificate
-                                    </li>
-                                </ul>
-
-                                <br />
-                                <br />
-
-                                <h3>My Experience</h3>
-
-                                <ul class="p-5 pt-2">
-                                    <li>
-                                        1 year - Junior Django web developer
-                                    </li>
-                                    <li>
-                                        3 Month - Technician internship
-                                    </li>
-                                </ul>
-                            </div>
+                        <div class="ricoContainer text-white" style="height: 100%;">
+                            <section style="position: relative;" class="h-100 d-flex align-items-center justify-content-around">
+                                <h1 id="ricoTitle" class="text-center float-start p-4 pb-1" style="font-family: RicoHeader; font-size: 500%; margin-top: -15px;">
+                                    R
+                                    <br/>
+                                    I
+                                    <br/>
+                                    C
+                                    <br/>
+                                    O
+                                </h1>
+                                <img id="bike" src="./Images and svgs/hp4.png" alt="BMW HP4" class="float-end" style="height: 70%; width: auto">
+                                <a id="ricoArrow" onClick="document.getElementById('ricoContent').scrollIntoView({behavior: 'smooth'});" style="position: absolute; bottom: 10px; opacity: 0.5;">&#x25BC</a>
+                            </section>
+                            <section id="ricoContent" class="h-100 d-flex align-items-center pt-5">
+                                <div class="row" style="margin-left: 50px">
+                                    <h3>My Skills</h3>
+                                    <ul class="p-5 pt-2">
+                                        <li>
+                                            Full-stack web application development (ASP.NET, Python, Django, Svelte)
+                                        </li>
+                                        <li>
+                                            Production DBMS
+                                        </li>
+                                        <li>
+                                            Web-scraping
+                                        </li>
+                                    </ul>
+    
+                                    <br />
+                                    <br />
+    
+                                    <h3>My Qualifications</h3>
+    
+                                    <ul class="p-5 pt-2">
+                                        <li>
+                                            Microsoft Azure Fundamentals Certified
+                                        </li>
+                                        <li>
+                                            Microsoft Azure Developer Associate Certified
+                                        </li>
+                                        <li>
+                                            Microsoft Technology Associate Certificate (Advanced Python)
+                                        </li>
+                                        <li>
+                                            FCC - Responsive Web Design Certificate
+                                        </li>
+                                    </ul>
+    
+                                    <br />
+                                    <br />
+    
+                                    <h3>My Experience</h3>
+    
+                                    <ul class="p-5 pt-2 pb-0">
+                                        <li>
+                                            1 year - Junior Django web developer
+                                        </li>
+                                        <li>
+                                            3 Month - Technician internship
+                                        </li>
+                                    </ul>
+                                </div>
+                            </section>
                         </div>
                     </div>
                 </div>
