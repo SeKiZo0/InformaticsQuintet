@@ -113,7 +113,21 @@ morrisBTN.addEventListener('click', function () {
     morrisTl.fromTo("#MorrisText", { x: -50, opacity: 0 }, { x: 5, opacity: 1, duration: 1 },3);
     morrisTl.to(".displacement",{attr: {r: 800},duration: 2},3);
 
+    const MorrisLogo = document.querySelectorAll("#morrisLogo path");
 
+    gsap.utils.toArray(MorrisLogo).forEach((letter,i) => {
+      let letterTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".mAbout",
+          start: "-25% top",
+          scrub: false,
+          //markers: true,
+          toggleActions: "restart pause resume pause",
+        }
+      })
+    
+    letterTl.fromTo(letter, {strokeDashoffset:(MorrisLogo[i].getTotalLength())},{strokeDashoffset:0, duration:1, delay: 2})
+    })
 
   //morrisAnimation.play()
 })
@@ -128,21 +142,7 @@ MorrisModal._element.addEventListener('shown.bs.modal', function () {
 });
 
 
-const MorrisLogo = document.querySelectorAll("#morrisLogo path");
 
-gsap.utils.toArray(MorrisLogo).forEach((letter,i) => {
-  let letterTl = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".mAbout",
-      start: "-25% top",
-      scrub: false,
-      //markers: true,
-      toggleActions: "restart pause resume pause",
-    }
-  })
-
-letterTl.fromTo(letter, {strokeDashoffset:(MorrisLogo[i].getTotalLength())},{strokeDashoffset:0, duration:1, delay: 1})
-})
 /*
 for(let i=0; i<MorrisLogo.length; i++){
     console.log(`Letter ${i} is ${MorrisLogo[i].getTotalLength()}`)

@@ -416,3 +416,18 @@ img {
   justify-content: center;*/
   align-items: center;
 }
+
+#avatars{
+  background-image: url("../Images and svgs/lines.svg");
+  background-repeat: no-repeat; 
+  background-position: 50% 50%;
+  background-size: auto 100%;
+}
+
+#headerSection{
+  background-image: url("../Images and svgs/lines.svg");
+  background-repeat: no-repeat; 
+  background-position: 150% 50%;
+  background-size: auto 100%;
+}
+
