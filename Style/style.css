@@ -110,6 +110,7 @@ svg {
 
 .block2{
   background: linear-gradient(200deg, var(--blue) 13.57%, rgb(79, 89, 233) 98.38%);
+  overflow: hidden;
 }
 
 .block3{
