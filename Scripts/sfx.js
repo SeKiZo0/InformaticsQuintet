@@ -92,6 +92,7 @@ let rossBtn = document.getElementById('ross');
 rossBtn.addEventListener('click', function () {
   //ACTIONS
   gsap.fromTo("#carr",  {opacity: 0, x: 200} ,{opacity: 1, x: 0, duration: 2, delay: 0.5});
+  gsap.fromTo("#RossText", {opacity: 0, x: -50}, {opacity: 1,  x: 0, duration: 2, delay: 0.5});
 })
 
  //the easiest but not the best way(depending on what you want to do) of using GSAP for animations is to use 
