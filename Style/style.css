@@ -431,3 +431,20 @@ img {
   background-size: auto 100%;
 }
 
+.content-flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text-content {
+  flex: 1; 
+}
+
+.image-container {
+  flex-basis: 80%; 
+  height: 10%; 
+  margin-left: 250px; 
+  position: absolute;
+  top: 10%;
+}
