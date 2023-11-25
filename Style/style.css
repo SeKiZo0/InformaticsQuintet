@@ -249,6 +249,17 @@ stroke-dashoffset: 667;
   position: absolute;
   bottom: 10%;
 }
+
+.racetrack{
+  height: 500px;
+  width: 500px;
+}
+
+#raceSVG{
+  height: 500px;
+  width: 500px;
+  left: 0;
+}
 /*Morris css end*/
 
 img {
