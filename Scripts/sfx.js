@@ -84,6 +84,16 @@ ricoBtn.addEventListener('click', function () {
   gsap.fromTo("#ricoArrow", {opacity: 0, y: -20}, { opacity: 1, y: 0, duration: 2, delay: 2.5});
 })
 
+
+//RICO ANIMATIONS (Basically just copied from morris ლ(́◉◞౪◟◉‵ლ))
+
+let rossBtn = document.getElementById('ross');
+
+rossBtn.addEventListener('click', function () {
+  //ACTIONS
+  gsap.fromTo("#carr",  {opacity: 0, x: 200} ,{opacity: 1, x: 0, duration: 2, delay: 0.5});
+})
+
  //the easiest but not the best way(depending on what you want to do) of using GSAP for animations is to use 
  /*gsap.fromTo(".classOfYourChoice(ids also work)",{cssAttribute:beforeValue},{cssAttribute:afterValue, duration:inSeconds, delay:inSeconds})*/
 //Morris section, everyone else can put their stuff above
