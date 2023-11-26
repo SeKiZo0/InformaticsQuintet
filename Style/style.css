@@ -178,8 +178,36 @@ svg {
   height: 100vh;
   width: 100vw;
   position: absolute;
-  background-color: rgb(73, 73, 73);
+  background-color: rgb(49, 49, 49);
   /*display: none;*/
+}
+
+#podium{
+  height: 350px;
+  width: auto;
+}
+
+#first, #second, #third{
+  height: 170px;
+  position: absolute;
+}
+
+#first{
+  top: 6%;
+  left: 34%;
+  width: 28%;
+}
+
+#second{
+  top:17%;
+  left: 6%;
+  width: 28%;
+}
+
+#third{
+  top: 25%;
+  right: 10%;
+  width: 28%;
 }
 
 .raceSection{
