@@ -14,25 +14,29 @@
   src: url(./fonts/Lexend-Regular.ttf);
 }
 
-@font-face{
+@font-face {
   font-family: RicoHeader;
   src: url(./fonts/Orbitron-SemiBold.ttf);
 }
 
-a{
+a {
   text-decoration: none;
   color: white;
   font-size: 20pt;
   cursor: pointer;
 }
 
-.modal, .modal-content, .modal-body, .modal-xl, .modal-dialog{
+.modal,
+.modal-content,
+.modal-body,
+.modal-xl,
+.modal-dialog {
   border: none !important;
   padding: 0 !important;
   border-radius: 50px;
 }
 
-.modal-body{
+.modal-body {
   display: flex;
   justify-content: center;
   overflow-x: hidden;
@@ -55,18 +59,19 @@ body {
   overflow-x: hidden;
 }
 
-body, html{
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
+body,
+html {
+  /*scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;*/
 }
 
 section {
   scroll-snap-align: start;
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   display: none;
-} 
+}
 
 /*dont mind the redundency*/
 
@@ -76,8 +81,8 @@ body {
   height: 100%;
   -webkit-overflow-scrolling: touch;
 }
+
 svg {
-  left: -20%;
   width: 100%;
   height: 100vh;
   position: absolute;
@@ -102,27 +107,32 @@ svg {
   text-align: center;
   color: white;
   /*position: relative;*/
-  box-sizing: border-box;  
+  box-sizing: border-box;
 }
 
-.block1{
+.block1 {
   background: linear-gradient(200deg, var(--lightBlue) 13.57%, rgb(67, 139, 247) 98.38%);
 }
 
-.block2{
+.block2 {
   background: linear-gradient(200deg, var(--blue) 13.57%, rgb(79, 89, 233) 98.38%);
   overflow: hidden;
 }
 
-.block3{
+.block3 {
   background: rgb(188, 60, 60) 98.38%;
 }
+
 
 .block4{
   background: var(--connorGrey);
 }
 
-.block1, .block2, .block3, .block4, .block5{
+.block1,
+.block2,
+.block3,
+.block4,
+.block5 {
   height: 70vh;
   padding: 10px;
   width: 100%;
@@ -130,42 +140,47 @@ svg {
   border-radius: 50px;
 }
 
-.block3{
+.block3 {
   box-shadow: 0px 0px 500px inset rgba(0, 0, 0, 0.7);
 }
 
 /*Morris css start*/
 
-.block5{
-  background: linear-gradient(200deg, var(--darkGrey) 13.57%, #363636 98.38%); 
+.block5 {
+  background: linear-gradient(200deg, var(--darkGrey) 13.57%, #363636 98.38%);
   /*Morris special sauce*/
   z-index: 0;
+  padding-right: 0%;
+  width: 1920px
 }
 
 .block5 svg {
-  z-index: 1; /* or any positive value that works for your layout */
+  left: -20%;
+  z-index: 1;
+  /* or any positive value that works for your layout */
 }
 
-.mContent{
+.mContent {
   padding: 10px;
   z-index: 2;
   position: relative;
   overflow-x: hidden;
 }
 
-.mContainer{
+.mContainer {
   height: 70vh;
   position: relative;
 }
 
-#carContainer{
+#carContainer {
   height: 100vh;
   align-items: center;
 }
 
-#car1, #car2 {
-    max-height: 120px;
-    margin-left: 20px;
+#car1,
+#car2 {
+  max-height: 120px;
+  margin-left: 20px;
 }
 
 #car2 {
@@ -174,7 +189,7 @@ svg {
 
 
 
-.infoCard{
+.infoCard {
   z-index: 2;
   height: 100vh;
   width: 100vw;
@@ -183,60 +198,62 @@ svg {
   /*display: none;*/
 }
 
-#podium{
+#podium {
   height: 350px;
   width: auto;
 }
 
-#first, #second, #third{
+#first,
+#second,
+#third {
   height: 170px;
   position: absolute;
 }
 
-#first{
+#first {
   top: 6%;
   left: 34%;
   width: 28%;
 }
 
-#second{
-  top:17%;
+#second {
+  top: 17%;
   left: 6%;
   width: 28%;
 }
 
-#third{
+#third {
   top: 25%;
   right: 10%;
   width: 28%;
 }
 
-.raceSection{
-position: relative;
+.raceSection {
+  position: relative;
 }
 
 
 .lights {
-    background-color: var(--primary-background);
-    display: flex;
-    height: 70px;
-    width: 180px;
-    padding: 10px;
-    gap: 10px;
-    margin-top: 100px;
-    margin-bottom: 100px;
-    margin-left: auto;
-    margin-right: auto;
-  }
+  background-color: var(--primary-background);
+  display: flex;
+  height: 70px;
+  width: 180px;
+  padding: 10px;
+  gap: 10px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-.light{
+.light {
   background-color: var(--darkGrey);
   height: 50px;
   width: 50px;
   border-radius: 50%;
 }
 
-#morrisLogo{
+#morrisLogo {
   position: absolute;
   top: 0px;
   height: 70px;
@@ -245,50 +262,91 @@ position: relative;
 }
 
 #morrisLogo path:nth-child(1) {
-stroke-dasharray: 491;
-stroke-dashoffset: 491;
+  stroke-dasharray: 491;
+  stroke-dashoffset: 491;
 }
-#morrisLogo path:nth-child(2){
+
+#morrisLogo path:nth-child(2) {
   stroke-dasharray: 241;
-stroke-dashoffset: 241;
+  stroke-dashoffset: 241;
 }
-#morrisLogo path:nth-child(3){
+
+#morrisLogo path:nth-child(3) {
   stroke-dasharray: 485;
-stroke-dashoffset: 485;
+  stroke-dashoffset: 485;
 }
-#morrisLogo path:nth-child(4){
+
+#morrisLogo path:nth-child(4) {
   stroke-dasharray: 485;
-stroke-dashoffset: 485;
+  stroke-dashoffset: 485;
 }
-#morrisLogo path:nth-child(5){
+
+#morrisLogo path:nth-child(5) {
   stroke-dasharray: 450;
-stroke-dashoffset: 250;
+  stroke-dashoffset: 250;
 }
-#morrisLogo path:nth-child(6){
+
+#morrisLogo path:nth-child(6) {
   stroke-dasharray: 667;
-stroke-dashoffset: 667;
+  stroke-dashoffset: 667;
 }
 
 
-#m5Morris{
+#m5Morris {
   mix-blend-mode: multiply;
 }
 
-#MorrisText{
+#MorrisText {
   position: absolute;
   bottom: 10%;
 }
 
-.racetrack{
-  height: 500px;
-  width: 500px;
+.racetrack {
+  height: 1000px;
+  width: 1000px;
 }
 
-#raceSVG{
-  height: 500px;
-  width: 500px;
-  left: 0;
+#raceSVG {
+  height: 1000px;
+  width: 1000px;
 }
+
+#RCar {
+  transform: translateY(175px)
+}
+
+.racePoints{
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  background-color: var(--lightBlue);
+  border: solid 1px var(--blue);
+  border-radius: 5px;
+  position:absolute
+}
+
+#point1{
+  height: 200px;
+  width: 150px;
+  opacity: 0;  
+  transform: translateX(360px) translateY(60px);
+  
+}
+
+#point2{
+  height: 200px;
+  width: 150px;
+  opacity: 0;  
+  transform: translateX(360px) translateY(360px);  
+}
+
+#point3{
+  height: 200px;
+  width: 150px;
+  opacity: 0;  
+  transform: translateX(-360px) translateY(565px);
+}
+
 /*Morris css end*/
 
 img {
@@ -355,8 +413,8 @@ img {
 
 .globe.earth {
   background-image: url("../Images and svgs/earth.png");
-  background-position: center; 
-  background-repeat: no-repeat; 
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
   animation-name: spin;
   animation-duration: 4000ms;
@@ -368,11 +426,13 @@ img {
   width: 30px;
 }
 
-@keyframes spin { 
-  from { 
-      transform: rotate(0deg); 
-  } to { 
-      transform: rotate(-360deg); 
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(-360deg);
   }
 }
 
@@ -498,7 +558,7 @@ img {
 
 /*RICO CSS*/
 
-.avatar-circle{
+.avatar-circle {
   height: 250px;
   width: 250px;
   background-color: rgb(87, 87, 87);
@@ -511,34 +571,34 @@ img {
   aspect-ratio: 1;
 }
 
-.avatar-circle:hover{
+.avatar-circle:hover {
   background-color: rgb(78, 78, 78);
   box-shadow: 0px 0px 50px inset var(--primary-background);
 }
 
-.icon{
+.icon {
   width: 75%;
   z-index: 1;
   height: auto;
 }
 
-#avatar-section{
+#avatar-section {
   display: flex;
   /*flex-direction: row !important;
   justify-content: center;*/
   align-items: center;
 }
 
-#avatars{
+#avatars {
   background-image: url("../Images and svgs/lines.svg");
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: auto 100%;
 }
 
-#headerSection{
+#headerSection {
   background-image: url("../Images and svgs/lines.svg");
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
   background-position: 150% 50%;
   background-size: auto 100%;
 }
@@ -550,13 +610,13 @@ img {
 }
 
 .text-content {
-  flex: 1; 
+  flex: 1;
 }
 
 .image-container {
-  flex-basis: 80%; 
-  height: 10%; 
-  margin-left: 250px; 
+  flex-basis: 80%;
+  height: 10%;
+  margin-left: 250px;
   position: absolute;
   top: 10%;
 
@@ -565,4 +625,3 @@ img {
 /*Stephen CSS START*/
 
 /*Stephen CSS END*/
-
