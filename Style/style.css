@@ -110,6 +110,7 @@ svg {
 
 .block2{
   background: linear-gradient(200deg, var(--blue) 13.57%, rgb(79, 89, 233) 98.38%);
+  overflow: hidden;
 }
 
 .block3{
@@ -247,6 +248,17 @@ stroke-dashoffset: 667;
 #MorrisText{
   position: absolute;
   bottom: 10%;
+}
+
+.racetrack{
+  height: 500px;
+  width: 500px;
+}
+
+#raceSVG{
+  height: 500px;
+  width: 500px;
+  left: 0;
 }
 /*Morris css end*/
 
@@ -447,8 +459,10 @@ img {
   margin-left: 250px; 
   position: absolute;
   top: 10%;
+
 }
 
 /*Stephen CSS START*/
 
 /*Stephen CSS END*/
+

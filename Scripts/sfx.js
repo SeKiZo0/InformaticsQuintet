@@ -84,6 +84,17 @@ ricoBtn.addEventListener('click', function () {
   gsap.fromTo("#ricoArrow", {opacity: 0, y: -20}, { opacity: 1, y: 0, duration: 2, delay: 2.5});
 })
 
+
+//RICO ANIMATIONS (Basically just copied from morris ლ(́◉◞౪◟◉‵ლ))
+
+let rossBtn = document.getElementById('ross');
+
+rossBtn.addEventListener('click', function () {
+  //ACTIONS
+  gsap.fromTo("#carr",  {opacity: 0, x: 200} ,{opacity: 1, x: 0, duration: 2, delay: 0.5});
+  gsap.fromTo("#RossText", {opacity: 0, x: -50}, {opacity: 1,  x: 0, duration: 2, delay: 0.5});
+})
+
  //the easiest but not the best way(depending on what you want to do) of using GSAP for animations is to use 
  /*gsap.fromTo(".classOfYourChoice(ids also work)",{cssAttribute:beforeValue},{cssAttribute:afterValue, duration:inSeconds, delay:inSeconds})*/
 //Morris section, everyone else can put their stuff above
@@ -113,7 +124,21 @@ morrisBTN.addEventListener('click', function () {
     morrisTl.fromTo("#MorrisText", { x: -50, opacity: 0 }, { x: 5, opacity: 1, duration: 1 },3);
     morrisTl.to(".displacement",{attr: {r: 800},duration: 2},3);
 
+    const MorrisLogo = document.querySelectorAll("#morrisLogo path");
 
+    gsap.utils.toArray(MorrisLogo).forEach((letter,i) => {
+      let letterTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".mAbout",
+          start: "-25% top",
+          scrub: false,
+          //markers: true,
+          toggleActions: "restart pause resume pause",
+        }
+      })
+    
+    letterTl.fromTo(letter, {strokeDashoffset:(MorrisLogo[i].getTotalLength())},{strokeDashoffset:0, duration:1, delay: 2})
+    })
 
   //morrisAnimation.play()
 })
@@ -127,22 +152,50 @@ MorrisModal._element.addEventListener('shown.bs.modal', function () {
   ScrollTrigger.refresh();
 });
 
+let trackSVG = document.querySelector("#trackPath");
+//console.log(trackSVG);
+const point = trackSVG.getPointAtLength(10);
+const point2 = trackSVG.getPointAtLength(12);
+const point3 = trackSVG.getPointAtLength(18);
+console.log(point);
+console.log(point2);
+console.log(point3);
+const logo= document.getElementsByTagName("path");
 
-const MorrisLogo = document.querySelectorAll("#morrisLogo path");
 
-gsap.utils.toArray(MorrisLogo).forEach((letter,i) => {
-  let letterTl = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".mAbout",
-      start: "-25% top",
-      scrub: false,
-      //markers: true,
-      toggleActions: "restart pause resume pause",
-    }
-  })
+const circle = document.querySelector('#RCar');
 
-letterTl.fromTo(letter, {strokeDashoffset:(MorrisLogo[i].getTotalLength())},{strokeDashoffset:0, duration:1, delay: 1})
-})
+// Create an object that gsap can animate
+const val = { distance: 0 };
+
+var rotationCar = 0
+// Create a tween
+gsap.to(val, {
+  // Animate from distance 0 to the total distance
+  distance: trackSVG.getTotalLength(),
+  // Make the animation lasts 5 seconds
+  duration: 10,
+  // Function call on each frame of the animation
+  onUpdate: () => {
+    // Query a point at the new distance value
+    const point1 = trackSVG.getPointAtLength(val.distance);
+    const point2 = trackSVG.getPointAtLength(val.distance+2);
+    var rotate = Math.atan2(point2.y - point1.y, point2.x - point1.x);
+    // Update the circle coordinates
+    gsap.to(circle,{x:point1.x-20,y:point1.y})
+    gsap.fromTo(circle,{rotation: rotationCar}, {rotation: radians_to_degrees(rotate)})
+    rotationCar = radians_to_degrees(rotate)
+    //circle.setAttribute('x', point.x);
+    //circle.setAttribute('y', point.y);
+  }
+});
+
+function radians_to_degrees(radians)
+{
+  var pi = Math.PI;
+  return radians * (180/pi);
+}
+
 /*
 for(let i=0; i<MorrisLogo.length; i++){
     console.log(`Letter ${i} is ${MorrisLogo[i].getTotalLength()}`)
