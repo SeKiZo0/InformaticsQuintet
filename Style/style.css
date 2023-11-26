@@ -55,8 +55,8 @@ body {
 }
 
 body, html{
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
+  /*scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;*/
 }
 
 section {
@@ -279,13 +279,13 @@ stroke-dashoffset: 667;
 }
 
 .racetrack{
-  height: 500px;
-  width: 500px;
+  height: 1000px;
+  width: 1000px;
 }
 
 #raceSVG{
-  height: 500px;
-  width: 500px;
+  height: 1000px;
+  width: 1000px;
   left: 0;
 }
 /*Morris css end*/

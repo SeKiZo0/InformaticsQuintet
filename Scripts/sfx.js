@@ -32,32 +32,32 @@ carA.fromTo("#car2",
   2.7)
 
 carA.fromTo(".infoCard",
-//uses percent instead of px(https://gsap.com/community/forums/topic/8148-animating-x-with-percentage/#:~:text=GSAP%20can%20do%20percentage%20x,and%20yPercent%20for%20responsive%20animations.&text=Codepen%20example%20of%20interactive%20responsive,HTML)
+  //uses percent instead of px(https://gsap.com/community/forums/topic/8148-animating-x-with-percentage/#:~:text=GSAP%20can%20do%20percentage%20x,and%20yPercent%20for%20responsive%20animations.&text=Codepen%20example%20of%20interactive%20responsive,HTML)
   { xPercent: -100 },
   { xPercent: 0 },
   3.6)
 
 var lightCounter = 0.7
 //for loop 
-  gsap.utils.toArray(".light").forEach((light, i) => {
-    let lightsTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#carContainer",
-        start: "top bottom",
-        scrub: false,
-        toggleActions: "restart pause resume pause",
-        //markers: true
-      }
-    })
-    console.log(i)
-    lightsTl.fromTo(light,{backgroundColor: "grey"},{backgroundColor: "red", delay:lightCounter})
-    console.log(lightCounter += 0.7)
-    if (lightCounter >= 2.1) {
-      lightsTl.fromTo(".light",{backgroundColor: "grey"},{backgroundColor: "green"})
+gsap.utils.toArray(".light").forEach((light, i) => {
+  let lightsTl = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#carContainer",
+      start: "top bottom",
+      scrub: false,
+      toggleActions: "restart pause resume pause",
+      //markers: true
     }
   })
+  console.log(i)
+  lightsTl.fromTo(light, { backgroundColor: "grey" }, { backgroundColor: "red", delay: lightCounter })
+  console.log(lightCounter += 0.7)
+  if (lightCounter >= 2.1) {
+    lightsTl.fromTo(".light", { backgroundColor: "grey" }, { backgroundColor: "green" })
+  }
+})
 
-  let avatarDelay=0
+let avatarDelay = 0
 gsap.utils.toArray(".avatar-circle").forEach((avatar) => {
   let avatarTl = gsap.timeline({
     scrollTrigger: {
@@ -69,7 +69,7 @@ gsap.utils.toArray(".avatar-circle").forEach((avatar) => {
     }
   })
 
-  avatarTl.from(avatar, {y:100, opacity: 0, delay:avatarDelay})
+  avatarTl.from(avatar, { y: 100, opacity: 0, delay: avatarDelay })
   avatarDelay += 0.1
 })
 
@@ -79,9 +79,9 @@ let ricoBtn = document.getElementById('rico');
 
 ricoBtn.addEventListener('click', function () {
   //ACTIONS
-  gsap.fromTo("#bike",  {opacity: 0, x: 200} ,{opacity: 1, x: 0, duration: 2, delay: 0.5});
-  gsap.fromTo("#ricoTitle", {opacity: 0, y: -50, x: -50}, {opacity: 1, y: 0, x: 0, duration: 2, delay: 0.5});
-  gsap.fromTo("#ricoArrow", {opacity: 0, y: -20}, { opacity: 1, y: 0, duration: 2, delay: 2.5});
+  gsap.fromTo("#bike", { opacity: 0, x: 200 }, { opacity: 1, x: 0, duration: 2, delay: 0.5 });
+  gsap.fromTo("#ricoTitle", { opacity: 0, y: -50, x: -50 }, { opacity: 1, y: 0, x: 0, duration: 2, delay: 0.5 });
+  gsap.fromTo("#ricoArrow", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 2, delay: 2.5 });
 })
 
 
@@ -91,12 +91,12 @@ let rossBtn = document.getElementById('ross');
 
 rossBtn.addEventListener('click', function () {
   //ACTIONS
-  gsap.fromTo("#carr",  {opacity: 0, x: 200} ,{opacity: 1, x: 0, duration: 2, delay: 0.5});
-  gsap.fromTo("#RossText", {opacity: 0, x: -50}, {opacity: 1,  x: 0, duration: 2, delay: 0.5});
+  gsap.fromTo("#carr", { opacity: 0, x: 200 }, { opacity: 1, x: 0, duration: 2, delay: 0.5 });
+  gsap.fromTo("#RossText", { opacity: 0, x: -50 }, { opacity: 1, x: 0, duration: 2, delay: 0.5 });
 })
 
- //the easiest but not the best way(depending on what you want to do) of using GSAP for animations is to use 
- /*gsap.fromTo(".classOfYourChoice(ids also work)",{cssAttribute:beforeValue},{cssAttribute:afterValue, duration:inSeconds, delay:inSeconds})*/
+//the easiest but not the best way(depending on what you want to do) of using GSAP for animations is to use 
+/*gsap.fromTo(".classOfYourChoice(ids also work)",{cssAttribute:beforeValue},{cssAttribute:afterValue, duration:inSeconds, delay:inSeconds})*/
 //Morris section, everyone else can put their stuff above
 //TODO I need to fix the rest of this
 
@@ -108,37 +108,37 @@ let morrisBTN = document.getElementById('morrisA')
 
 morrisBTN.addEventListener('click', function () {
 
-    let morrisTl = gsap.timeline({
+  let morrisTl = gsap.timeline({
+    scrollTrigger: {
+      scroller: ".block5",
+      trigger: ".mContainer",
+      start: "-100% top",
+      scrub: false,
+      //markers: true,
+      toggleActions: "restart pause resume pause",
+    }
+  })
+  morrisTl.fromTo('.displacement', { attr: { r: 0 } }, { attr: { r: 600 }, duration: 2 });
+  morrisTl.fromTo(".mContainer", { x: -50, opacity: 0 }, { x: 50, opacity: 1, duration: 1 }, 1);
+  morrisTl.fromTo("#m5Morris", { x: 0, opacity: 1, scale: 1 }, { x: 1000, scale: 2, opacity: 0, duration: 1, delay: 1 }, 2);
+  morrisTl.fromTo("#MorrisText", { x: -50, opacity: 0 }, { x: 5, opacity: 1, duration: 1 }, 3);
+  morrisTl.to(".displacement", { attr: { r: 800 }, duration: 2 }, 3);
+
+  const MorrisLogo = document.querySelectorAll("#morrisLogo path");
+
+  gsap.utils.toArray(MorrisLogo).forEach((letter, i) => {
+    let letterTl = gsap.timeline({
       scrollTrigger: {
-        scroller: ".block5",
-        trigger: ".mContainer",
-        start: "-100% top",
+        trigger: ".mAbout",
+        start: "-25% top",
         scrub: false,
         //markers: true,
         toggleActions: "restart pause resume pause",
       }
     })
-    morrisTl.fromTo('.displacement',{attr: {r:0}},{attr: {r: 600},duration: 2});
-    morrisTl.fromTo(".mContainer", { x: -50, opacity: 0 }, { x: 50, opacity: 1, duration: 1 },1);
-    morrisTl.fromTo("#m5Morris",{ x:0, opacity:1, scale:1} ,{ x:1000, scale:2, opacity:0, duration:1, delay:1},2);
-    morrisTl.fromTo("#MorrisText", { x: -50, opacity: 0 }, { x: 5, opacity: 1, duration: 1 },3);
-    morrisTl.to(".displacement",{attr: {r: 800},duration: 2},3);
 
-    const MorrisLogo = document.querySelectorAll("#morrisLogo path");
-
-    gsap.utils.toArray(MorrisLogo).forEach((letter,i) => {
-      let letterTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".mAbout",
-          start: "-25% top",
-          scrub: false,
-          //markers: true,
-          toggleActions: "restart pause resume pause",
-        }
-      })
-    
-    letterTl.fromTo(letter, {strokeDashoffset:(MorrisLogo[i].getTotalLength())},{strokeDashoffset:0, duration:1, delay: 2})
-    })
+    letterTl.fromTo(letter, { strokeDashoffset: (MorrisLogo[i].getTotalLength()) }, { strokeDashoffset: 0, duration: 1, delay: 2 })
+  })
 
   //morrisAnimation.play()
 })
@@ -160,40 +160,94 @@ const point3 = trackSVG.getPointAtLength(18);
 console.log(point);
 console.log(point2);
 console.log(point3);
-const logo= document.getElementsByTagName("path");
+const logo = document.getElementsByTagName("path");
 
 
 const circle = document.querySelector('#RCar');
+
+let sM = 2
 
 // Create an object that gsap can animate
 const val = { distance: 0 };
 
 var rotationCar = 0
-// Create a tween
-gsap.to(val, {
+
+const carInfo = gsap.timeline().to(val, {
   // Animate from distance 0 to the total distance
-  distance: trackSVG.getTotalLength(),
-  // Make the animation lasts 5 seconds
-  duration: 10,
+  distance: trackSVG.getTotalLength() - (60 + 920),
+  // first point distance: trackSVG.getTotalLength() - (60 + 920),
+  // second point :distance: trackSVG.getTotalLength()-(60+500),
+  // last point : trackSVG.getTotalLength()-(60+290)
+  duration: 2,
+
   // Function call on each frame of the animation
   onUpdate: () => {
     // Query a point at the new distance value
     const point1 = trackSVG.getPointAtLength(val.distance);
-    const point2 = trackSVG.getPointAtLength(val.distance+2);
-    var rotate = Math.atan2(point2.y - point1.y, point2.x - point1.x);
+    const point2 = trackSVG.getPointAtLength(val.distance + 1);
+    var rotate = Math.atan2(point2.y*sM - point1.y*sM, point2.x*sM - point1.x*sM);
     // Update the circle coordinates
-    gsap.to(circle,{x:point1.x-20,y:point1.y})
-    gsap.fromTo(circle,{rotation: rotationCar}, {rotation: radians_to_degrees(rotate)})
-    rotationCar = radians_to_degrees(rotate)
-    //circle.setAttribute('x', point.x);
-    //circle.setAttribute('y', point.y);
+    gsap.to(circle, { x: point1.x*sM - 20, y: point1.y*sM })
+    //uses previous rotation value as reference
+    gsap.fromTo(circle, { rotation: rotationCar }, { rotation: radians_to_degrees(rotate) })
+    rotationCar = radians_to_degrees(rotate);
+  }
+}).to(val, {
+  // Animate from distance 0 to the total distance
+  distance: trackSVG.getTotalLength() - (60 + 500),
+  // Make the animation lasts 5 seconds
+  duration: 4,
+  // Function call on each frame of the animation
+  onUpdate: () => {
+    // Query a point at the new distance value
+    const point1 = trackSVG.getPointAtLength(val.distance);
+    const point2 = trackSVG.getPointAtLength(val.distance + 1);
+    var rotate = Math.atan2(point2.y*sM - point1.y*sM, point2.x*sM - point1.x*sM);
+    // Update the circle coordinates
+    gsap.to(circle, { x: point1.x*sM - 20, y: point1.y*sM })
+    //uses previous rotation value as reference
+    gsap.fromTo(circle, { rotation: rotationCar }, { rotation: radians_to_degrees(rotate) })
+    rotationCar = radians_to_degrees(rotate);
+  }
+}).to(val, {
+  // Animate from distance 0 to the total distance
+  distance: trackSVG.getTotalLength() - (60 + 290),
+  // Make the animation lasts 5 seconds
+  duration: 2,
+  // Function call on each frame of the animation
+  onUpdate: () => {
+    // Query a point at the new distance value
+    const point1 = trackSVG.getPointAtLength(val.distance);
+    const point2 = trackSVG.getPointAtLength(val.distance + 1);
+    var rotate = Math.atan2(point2.y*sM - point1.y*sM, point2.x*sM - point1.x*sM);
+    // Update the circle coordinates
+    gsap.to(circle, { x: point1.x*sM - 20, y: point1.y*sM })
+    //uses previous rotation value as reference
+    gsap.fromTo(circle, { rotation: rotationCar }, { rotation: radians_to_degrees(rotate) })
+    rotationCar = radians_to_degrees(rotate);
+  }
+}).to(val, {
+  // Animate from distance 0 to the total distance
+  distance: trackSVG.getTotalLength() - (60),
+  // Make the animation lasts 5 seconds
+  duration: 2,
+  // Function call on each frame of the animation
+  onUpdate: () => {
+    // Query a point at the new distance value
+    const point1 = trackSVG.getPointAtLength(val.distance);
+    const point2 = trackSVG.getPointAtLength(val.distance + 1);
+    var rotate = Math.atan2(point2.y*sM - point1.y*sM, point2.x*sM - point1.x*sM);
+    // Update the circle coordinates
+    gsap.to(circle, { x: point1.x*sM - 20, y: point1.y*sM })
+    //uses previous rotation value as reference
+    gsap.fromTo(circle, { rotation: rotationCar }, { rotation: radians_to_degrees(rotate) })
+    rotationCar = radians_to_degrees(rotate);
   }
 });
 
-function radians_to_degrees(radians)
-{
+function radians_to_degrees(radians) {
   var pi = Math.PI;
-  return radians * (180/pi);
+  return radians * (180 / pi);
 }
 
 /*
