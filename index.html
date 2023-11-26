@@ -43,7 +43,7 @@
         <!-- <img src="./Images and svgs/lines.svg" class="float-end"
             style="position: absolute; z-index: 0; height: 100%; width: auto;" alt="BMW M lines">-->
         <div class="w-100 row justify-content-center text-center" id="avatar-section">
-            <a data-bs-toggle="modal" data-bs-target="#stephenModal" class="avatar-circle col-md-2"><img
+            <a data-bs-toggle="modal" data-bs-target="#stephenModal" id = "stephen" class="avatar-circle col-md-2"><img
                     src="./Images and svgs/avatars/stephen.png" class="icon" alt="stephen-avatar"></a>
             <a data-bs-toggle="modal" data-bs-target="#rossModal" id="ross" class="avatar-circle col-md-2"><img
                     src="./Images and svgs/avatars/ross.png" class="icon" alt="ross-avatar"></a>
@@ -128,14 +128,60 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-body">
-                    <div class="row block1 rounded-5 d-flex">
+                    <div class="row block1 rounded-5 d-flex" id="content" style="position: relative;">
                         <div class="col-md-3 text-center">
-                            <img src="Images and svgs/Group-1.svg" width="150px" alt="Avatar of Stephen">
+                            <img src="Images and svgs/Stephen Images/BMWM8.png" class="BMWM8" width="auto" height="70%" alt="Avatar of Stephen" style="position: absolute;">
                         </div>
-                        <div class="col-md-9 text-white">
+                        <div class="row" style="margin-left: 50px; position: absolute;" id="StephenText">
                             <h1>
-                                Stephen Swart - Bcom Informatics
+                                Stephen - BCom Informatics
                             </h1>
+                            <h3>My Skills</h3>
+                            <ul class="p-5 pt-2">
+                                <li>
+                                    Full-stack web application development (ASP.NET, Python, Django, Svelte)
+                                </li>
+                                <li>
+                                    Production DBMS
+                                </li>
+                                <li>
+                                    Web-scraping
+                                </li>
+                            </ul>
+
+                            <br />
+                            <br />
+
+                            <h3>My Qualifications</h3>
+
+                            <ul class="p-5 pt-2">
+                                <li>
+                                    Microsoft Azure Fundamentals Certified
+                                </li>
+                                <li>
+                                    Microsoft Azure Developer Associate Certified
+                                </li>
+                                <li>
+                                    Microsoft Technology Associate Certificate (Advanced Python)
+                                </li>
+                                <li>
+                                    FCC - Responsive Web Design Certificate
+                                </li>
+                            </ul>
+
+                            <br />
+                            <br />
+
+                            <h3>My Experience</h3>
+
+                            <ul class="p-5 pt-2 pb-0">
+                                <li>
+                                    1 year - Junior Django web developer
+                                </li>
+                                <li>
+                                    3 Month - Technician internship
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>

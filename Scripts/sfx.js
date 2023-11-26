@@ -200,3 +200,34 @@ function radians_to_degrees(radians)
 for(let i=0; i<MorrisLogo.length; i++){
     console.log(`Letter ${i} is ${MorrisLogo[i].getTotalLength()}`)
 }*/
+
+
+//Stephen Stuff
+let stephenBTN = document.getElementById('stephen');
+
+stephenBTN.addEventListener('click', function () {
+  //ACTIONS
+  let stephenTL = gsap.timeline({
+    scrollTrigger: {
+      scroller: ".block1",
+      trigger: "#StephenText",
+      start: "-1000% top",
+      scrub: false,
+      //markers: true,
+      toggleActions: "restart pause resume pause",
+    }
+  })
+  stephenTL.fromTo(".BMWM8",  {opacity: 0, x: 300} ,{opacity: 1, x: 0, duration: 2});
+  stephenTL.to(".BMWM8",  {opacity: 0, x: -200, duration: 1}, 2);
+  stephenTL.fromTo("#StephenText", { x: -50, opacity: 0 }, { x: 5, opacity: 1, duration: 1 },3);
+})
+
+var stephenModal = new bootstrap.Modal(document.getElementById('stephenModal'));
+
+// Event listener for modal shown event
+stephenModal._element.addEventListener('shown.bs.modal', function () {
+  // Your code to handle modal completion
+  // Refreshing scroll trigger
+  ScrollTrigger.refresh();
+});
+//Stephen Stuff
