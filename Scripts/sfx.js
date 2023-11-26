@@ -48,15 +48,15 @@ gsap.utils.toArray(".light").forEach((light, i) => {
       toggleActions: "restart pause resume pause",
       //markers: true
     }
-  })
-  console.log(i)
+  });
+  console.log(i);
   lightsTl.fromTo(light, { backgroundColor: "grey" }, { backgroundColor: "red", delay: lightCounter })
-  console.log(lightCounter += 0.7)
+  console.log(lightCounter += 0.7);
   if (lightCounter >= 2.1) {
     lightsTl.fromTo(".light", { backgroundColor: "grey" }, { backgroundColor: "green" })
   }
 })
-
+;
 let avatarDelay = 0
 gsap.utils.toArray(".avatar-circle").forEach((avatar) => {
   let avatarTl = gsap.timeline({
@@ -67,11 +67,11 @@ gsap.utils.toArray(".avatar-circle").forEach((avatar) => {
       //markers: true,
       toggleActions: "restart pause resume pause",
     }
-  })
+  });
 
   avatarTl.from(avatar, { y: 100, opacity: 0, delay: avatarDelay })
   avatarDelay += 0.1
-})
+});
 
 //RICO ANIMATIONS (Basically just copied from morris ლ(́◉◞౪◟◉‵ლ))
 
@@ -82,7 +82,7 @@ ricoBtn.addEventListener('click', function () {
   gsap.fromTo("#bike", { opacity: 0, x: 200 }, { opacity: 1, x: 0, duration: 2, delay: 0.5 });
   gsap.fromTo("#ricoTitle", { opacity: 0, y: -50, x: -50 }, { opacity: 1, y: 0, x: 0, duration: 2, delay: 0.5 });
   gsap.fromTo("#ricoArrow", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 2, delay: 2.5 });
-})
+});
 
 
 //RICO ANIMATIONS (Basically just copied from morris ლ(́◉◞౪◟◉‵ლ))
@@ -93,7 +93,7 @@ rossBtn.addEventListener('click', function () {
   //ACTIONS
   gsap.fromTo("#carr", { opacity: 0, x: 200 }, { opacity: 1, x: 0, duration: 2, delay: 0.5 });
   gsap.fromTo("#RossText", { opacity: 0, x: -50 }, { opacity: 1, x: 0, duration: 2, delay: 0.5 });
-})
+});
 
 //the easiest but not the best way(depending on what you want to do) of using GSAP for animations is to use 
 /*gsap.fromTo(".classOfYourChoice(ids also work)",{cssAttribute:beforeValue},{cssAttribute:afterValue, duration:inSeconds, delay:inSeconds})*/
@@ -104,7 +104,7 @@ rossBtn.addEventListener('click', function () {
 
 //morrisAnimation.pause()
 
-let morrisBTN = document.getElementById('morrisA')
+let morrisBTN = document.getElementById('morrisA');
 
 morrisBTN.addEventListener('click', function () {
 
@@ -117,7 +117,7 @@ morrisBTN.addEventListener('click', function () {
       //markers: true,
       toggleActions: "restart pause resume pause",
     }
-  })
+  });
   morrisTl.fromTo('.displacement', { attr: { r: 0 } }, { attr: { r: 600 }, duration: 2 });
   morrisTl.fromTo(".mContainer", { x: -50, opacity: 0 }, { x: 50, opacity: 1, duration: 1 }, 1);
   morrisTl.fromTo("#m5Morris", { x: 0, opacity: 1, scale: 1 }, { x: 1000, scale: 2, opacity: 0, duration: 1, delay: 1 }, 2);
@@ -135,13 +135,13 @@ morrisBTN.addEventListener('click', function () {
         //markers: true,
         toggleActions: "restart pause resume pause",
       }
-    })
+    });
 
     letterTl.fromTo(letter, { strokeDashoffset: (MorrisLogo[i].getTotalLength()) }, { strokeDashoffset: 0, duration: 1, delay: 2 })
-  })
+  });
 
   //morrisAnimation.play()
-})
+});
 
 var MorrisModal = new bootstrap.Modal(document.getElementById('morrisModal'));
 
@@ -165,14 +165,16 @@ const logo = document.getElementsByTagName("path");
 
 const circle = document.querySelector('#RCar');
 
-let sM = 2
+let sM = document.querySelector(".racetrack").clientHeight/500
+console.log(sM);
 
 // Create an object that gsap can animate
 const val = { distance: 0 };
 
 var rotationCar = 0
 
-const carInfo = gsap.timeline().to(val, {
+
+const carInfo = gsap.timeline({ paused: true }).to(val, {
   // Animate from distance 0 to the total distance
   distance: trackSVG.getTotalLength() - (60 + 920),
   // first point distance: trackSVG.getTotalLength() - (60 + 920),
@@ -191,7 +193,12 @@ const carInfo = gsap.timeline().to(val, {
     //uses previous rotation value as reference
     gsap.fromTo(circle, { rotation: rotationCar }, { rotation: radians_to_degrees(rotate) })
     rotationCar = radians_to_degrees(rotate);
-  }
+  },
+  onComplete: function () {
+    // Pause the timeline at the end of this animation
+    carInfo.pause();
+    gsap.fromTo("#point1",{scale:0, opacity:0},{scale:1, opacity:1})
+  },
 }).to(val, {
   // Animate from distance 0 to the total distance
   distance: trackSVG.getTotalLength() - (60 + 500),
@@ -208,7 +215,12 @@ const carInfo = gsap.timeline().to(val, {
     //uses previous rotation value as reference
     gsap.fromTo(circle, { rotation: rotationCar }, { rotation: radians_to_degrees(rotate) })
     rotationCar = radians_to_degrees(rotate);
-  }
+  },
+  onComplete: function () {
+    // Pause the timeline at the end of this animation
+    carInfo.pause();
+    gsap.fromTo("#point2",{scale:0, opacity:0},{scale:1, opacity:1})
+  },
 }).to(val, {
   // Animate from distance 0 to the total distance
   distance: trackSVG.getTotalLength() - (60 + 290),
@@ -225,7 +237,12 @@ const carInfo = gsap.timeline().to(val, {
     //uses previous rotation value as reference
     gsap.fromTo(circle, { rotation: rotationCar }, { rotation: radians_to_degrees(rotate) })
     rotationCar = radians_to_degrees(rotate);
-  }
+  },
+  onComplete: function () {
+    // Pause the timeline at the end of this animation
+    carInfo.pause();
+    gsap.fromTo("#point3",{scale:0, opacity:0},{scale:1, opacity:1})
+  },
 }).to(val, {
   // Animate from distance 0 to the total distance
   distance: trackSVG.getTotalLength() - (60),
@@ -242,13 +259,21 @@ const carInfo = gsap.timeline().to(val, {
     //uses previous rotation value as reference
     gsap.fromTo(circle, { rotation: rotationCar }, { rotation: radians_to_degrees(rotate) })
     rotationCar = radians_to_degrees(rotate);
-  }
+  },
+  onComplete: function () {
+    // Pause the timeline at the end of this animation
+    carInfo.pause();
+  },
 });
 
 function radians_to_degrees(radians) {
   var pi = Math.PI;
   return radians * (180 / pi);
 }
+
+document.querySelector(".racetrack").addEventListener("click", function() {
+  carInfo.play();
+});
 
 /*
 for(let i=0; i<MorrisLogo.length; i++){
