@@ -6,6 +6,7 @@
   --red: #e7222e;
   --grey: #b8cad1;
   --darkGrey: #2d4046;
+  --connorGrey: #212121;
 }
 
 @font-face {
@@ -118,7 +119,7 @@ svg {
 }
 
 .block4{
-  background: linear-gradient(200deg, var(--grey) 13.57%, #8a8a8a 98.38%);
+  background: var(--connorGrey);
 }
 
 .block1, .block2, .block3, .block4, .block5{
@@ -420,6 +421,77 @@ img {
   to {
     transform: rotate(360deg);
   }
+}
+
+.grid-container {
+  display: grid;
+  grid-template-rows: 0.9fr 0.9fr 0.9fr 0.9fr;
+  grid-template-columns: 0.9fr 0.9fr 0.9fr;
+  width: 100%;
+  grid-template-areas: 
+    "connor-modal-img connor-name connor-awards"
+    "connor-modal-img connor-degree connor-awards"
+    "connor-programming connor-programming connor-traits"
+    "connor-programming connor-programming connor-traits";
+}
+
+.connor-box {
+  border: 1px solid white;
+  border-radius: 15px;
+  padding: 10px;
+  margin: 5px;
+}
+
+.connor-box:hover {
+  border-color: var(--connorGrey);
+  box-shadow: 
+  0 0 5px var(--blue),
+  0 0 15px var(--blue),
+  0 0 30px var(--blue);
+}
+
+
+#connor-modal-img {
+  grid-area: connor-modal-img;
+}
+
+#connor-old-car {
+  max-width: 93%;
+  height: auto;
+}
+
+#connor-name {
+  grid-area: connor-name;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#connor-awards {
+  grid-area: connor-awards;
+}
+
+#connor-degree {
+  grid-area: connor-degree;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#connor-programming {
+  grid-area: connor-programming;
+}
+
+#connor-languages {
+  padding-left: 45px;
+}
+
+#connor-traits {
+  grid-area: connor-traits
+}
+
+.connor-heading-center {
+  text-align: center;
 }
 
 /*Connor CSS End*/

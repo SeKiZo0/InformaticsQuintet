@@ -231,3 +231,24 @@ stephenModal._element.addEventListener('shown.bs.modal', function () {
   ScrollTrigger.refresh();
 });
 //Stephen Stuff
+
+//Connor Stuff Start
+window.onload = function() {
+  var carImg = document.getElementById('connor-modal-img');
+  var car = document.getElementById('connor-old-car');
+
+  // Change to this image when hovering
+  var newCarImgSrc = './Images and svgs/ConnorImages/ConnorCarNew.png'; 
+
+  // Save the old src to revert back to it
+  var oldCarImgSrc = './Images and svgs/ConnorImages/ConnorCarOld.png';
+
+  carImg.addEventListener('mouseover', function() {
+      car.src = newCarImgSrc;
+  });
+
+  carImg.addEventListener('mouseout', function() {
+      car.src = oldCarImgSrc;
+  });
+}
+//Connor Stuff End
