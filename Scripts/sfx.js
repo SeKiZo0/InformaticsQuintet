@@ -61,7 +61,7 @@ gsap.utils.toArray(".light").forEach((light, i) => {
     lightsTl.fromTo(".light", { backgroundColor: "grey" }, { backgroundColor: "green" })
   }
 })
-;
+  ;
 let avatarDelay = 0
 gsap.utils.toArray(".avatar-circle").forEach((avatar) => {
   let avatarTl = gsap.timeline({
@@ -125,8 +125,8 @@ morrisBTN.addEventListener('click', function () {
   });
   morrisTl.fromTo('.displacement', { attr: { r: 0 } }, { attr: { r: 600 }, duration: 2 });
   morrisTl.fromTo(".mContainer", { x: -50, opacity: 0 }, { x: 50, opacity: 1, duration: 1 }, 1);
-  morrisTl.fromTo("#m5Morris", { x: 0, opacity: 1, scale: 1 }, { x: 1000, scale: 2, opacity: 0, duration: 1, delay: 1 }, 2);
-  morrisTl.fromTo("#MorrisText", { x: -50, opacity: 0 }, { x: 5, opacity: 1, duration: 1 }, 3);
+  morrisTl.fromTo("#m5Morris", { x: 0, opacity: 1, scale: 1 }, { x: 1000, scale: 2, opacity: 0, duration: 1, delay: 1 }, 2).to("#m5Morris", { x: 10000 });
+  morrisTl.fromTo("#MorrisText", { x: -100, opacity: 0 }, { x: -30, opacity: 1, duration: 1 }, 3);
   morrisTl.to(".displacement", { attr: { r: 800 }, duration: 2 }, 3);
 
   const MorrisLogo = document.querySelectorAll("#morrisLogo path");
@@ -147,6 +147,9 @@ morrisBTN.addEventListener('click', function () {
 
   //morrisAnimation.play()
 });
+
+
+
 
 var MorrisModal = new bootstrap.Modal(document.getElementById('morrisModal'));
 
@@ -170,7 +173,7 @@ const logo = document.getElementsByTagName("path");
 
 const circle = document.querySelector('#RCar');
 
-let sM = document.querySelector(".racetrack").clientHeight/500
+let sM = document.querySelector(".racetrack").clientHeight / 500
 console.log(sM);
 
 // Create an object that gsap can animate
@@ -199,19 +202,19 @@ const carInfo = gsap.timeline({ paused: true }).to(val, {
     // Query a point at the new distance value
     const point1 = trackSVG.getPointAtLength(val.distance);
     const point2 = trackSVG.getPointAtLength(val.distance + 1);
-    var rotate = Math.atan2(point2.y*sM - point1.y*sM, point2.x*sM - point1.x*sM);
+    var rotate = Math.atan2(point2.y * sM - point1.y * sM, point2.x * sM - point1.x * sM);
     // Update the circle coordinates
-    gsap.to(circle, { x: point1.x*sM - 20, y: point1.y*sM })
+    gsap.to(circle, { x: point1.x * sM - 20, y: point1.y * sM })
     //uses previous rotation value as reference
     gsap.fromTo(circle, { rotation: rotationCar }, { rotation: radians_to_degrees(rotate) })
     rotationCar = radians_to_degrees(rotate);
-    scoremultiplier +=  getRandomArbitrary(0, 2);
+    scoremultiplier += getRandomArbitrary(0, 2);
     gameScore.innerHTML = "SCORE: " + Math.trunc(val.distance * scoremultiplier);
   },
   onComplete: function () {
     // Pause the timeline at the end of this animation
     carInfo.pause();
-    gsap.fromTo("#point1",{scale:0, opacity:0},{scale:1, opacity:1})
+    gsap.fromTo("#point1", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1 })
   },
 }).to(val, {
   // Animate from distance 0 to the total distance
@@ -220,25 +223,25 @@ const carInfo = gsap.timeline({ paused: true }).to(val, {
   duration: 4,
   // Function call on each frame of the animation
   onStart: () => {
-    gsap.fromTo("#point1",{scale:1, opacity:1},{scale:0, opacity:0});
+    gsap.fromTo("#point1", { scale: 1, opacity: 1 }, { scale: 0, opacity: 0 });
   },
   onUpdate: () => {
     // Query a point at the new distance value
     const point1 = trackSVG.getPointAtLength(val.distance);
     const point2 = trackSVG.getPointAtLength(val.distance + 1);
-    var rotate = Math.atan2(point2.y*sM - point1.y*sM, point2.x*sM - point1.x*sM);
+    var rotate = Math.atan2(point2.y * sM - point1.y * sM, point2.x * sM - point1.x * sM);
     // Update the circle coordinates
-    gsap.to(circle, { x: point1.x*sM - 20, y: point1.y*sM })
+    gsap.to(circle, { x: point1.x * sM - 20, y: point1.y * sM })
     //uses previous rotation value as reference
     gsap.fromTo(circle, { rotation: rotationCar }, { rotation: radians_to_degrees(rotate) })
     rotationCar = radians_to_degrees(rotate);
-    scoremultiplier +=  getRandomArbitrary(0, 2);
+    scoremultiplier += getRandomArbitrary(0, 2);
     gameScore.innerHTML = "SCORE: " + Math.trunc(val.distance * scoremultiplier);
   },
   onComplete: function () {
     // Pause the timeline at the end of this animation
     carInfo.pause();
-    gsap.fromTo("#point2",{scale:0, opacity:0},{scale:1, opacity:1})
+    gsap.fromTo("#point2", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1 })
   },
 }).to(val, {
   // Animate from distance 0 to the total distance
@@ -247,25 +250,25 @@ const carInfo = gsap.timeline({ paused: true }).to(val, {
   duration: 2,
   // Function call on each frame of the animation
   onStart: () => {
-    gsap.fromTo("#point2",{scale:1, opacity:1},{scale:0, opacity:0});
+    gsap.fromTo("#point2", { scale: 1, opacity: 1 }, { scale: 0, opacity: 0 });
   },
   onUpdate: () => {
     // Query a point at the new distance value
     const point1 = trackSVG.getPointAtLength(val.distance);
     const point2 = trackSVG.getPointAtLength(val.distance + 1);
-    var rotate = Math.atan2(point2.y*sM - point1.y*sM, point2.x*sM - point1.x*sM);
+    var rotate = Math.atan2(point2.y * sM - point1.y * sM, point2.x * sM - point1.x * sM);
     // Update the circle coordinates
-    gsap.to(circle, { x: point1.x*sM - 20, y: point1.y*sM })
+    gsap.to(circle, { x: point1.x * sM - 20, y: point1.y * sM })
     //uses previous rotation value as reference
     gsap.fromTo(circle, { rotation: rotationCar }, { rotation: radians_to_degrees(rotate) })
     rotationCar = radians_to_degrees(rotate);
-    scoremultiplier +=  getRandomArbitrary(0, 2);
+    scoremultiplier += getRandomArbitrary(0, 2);
     gameScore.innerHTML = "SCORE: " + Math.trunc(val.distance * scoremultiplier);
   },
   onComplete: function () {
     // Pause the timeline at the end of this animation
     carInfo.pause();
-    gsap.fromTo("#point3",{scale:0, opacity:0},{scale:1, opacity:1})
+    gsap.fromTo("#point3", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1 })
   },
 }).to(val, {
   // Animate from distance 0 to the total distance
@@ -274,19 +277,19 @@ const carInfo = gsap.timeline({ paused: true }).to(val, {
   duration: 2,
   // Function call on each frame of the animation
   onStart: () => {
-    gsap.fromTo("#point3",{scale:1, opacity:1},{scale:0, opacity:0});
+    gsap.fromTo("#point3", { scale: 1, opacity: 1 }, { scale: 0, opacity: 0 });
   },
   onUpdate: () => {
     // Query a point at the new distance value
     const point1 = trackSVG.getPointAtLength(val.distance);
     const point2 = trackSVG.getPointAtLength(val.distance + 1);
-    var rotate = Math.atan2(point2.y*sM - point1.y*sM, point2.x*sM - point1.x*sM);
+    var rotate = Math.atan2(point2.y * sM - point1.y * sM, point2.x * sM - point1.x * sM);
     // Update the circle coordinates
-    gsap.to(circle, { x: point1.x*sM - 20, y: point1.y*sM })
+    gsap.to(circle, { x: point1.x * sM - 20, y: point1.y * sM })
     //uses previous rotation value as reference
     gsap.fromTo(circle, { rotation: rotationCar }, { rotation: radians_to_degrees(rotate) })
     rotationCar = radians_to_degrees(rotate);
-    scoremultiplier +=  getRandomArbitrary(0, 2);
+    scoremultiplier += getRandomArbitrary(0, 2);
     gameScore.innerHTML = "SCORE: " + Math.trunc(val.distance * scoremultiplier);
   },
   onComplete: function () {
@@ -303,19 +306,19 @@ function radians_to_degrees(radians) {
   return radians * (180 / pi);
 }
 
-document.querySelector(".racetrack").addEventListener("click", function() {
+document.querySelector(".racetrack").addEventListener("click", function () {
   carInfo.play();
 });
 
-document.querySelector("#point1").addEventListener("click", function() {
+document.querySelector("#point1").addEventListener("click", function () {
   carInfo.play();
 });
 
-document.querySelector("#point2").addEventListener("click", function() {
+document.querySelector("#point2").addEventListener("click", function () {
   carInfo.play();
 });
 
-document.querySelector("#point3").addEventListener("click", function() {
+document.querySelector("#point3").addEventListener("click", function () {
   carInfo.play();
 });
 
@@ -340,9 +343,9 @@ stephenBTN.addEventListener('click', function () {
       toggleActions: "restart pause resume pause",
     }
   })
-  stephenTL.fromTo(".BMWM8",  {opacity: 0, x: 300} ,{opacity: 1, x: 0, duration: 2});
-  stephenTL.to(".BMWM8",  {opacity: 0, x: -200, duration: 1}, 2);
-  stephenTL.fromTo("#StephenText", { x: -50, opacity: 0 }, { x: 5, opacity: 1, duration: 1 },3);
+  stephenTL.fromTo(".BMWM8", { opacity: 0, x: 300 }, { opacity: 1, x: 0, duration: 2 });
+  stephenTL.to(".BMWM8", { opacity: 0, x: -200, duration: 1 }, 2);
+  stephenTL.fromTo("#StephenText", { x: -50, opacity: 0 }, { x: 5, opacity: 1, duration: 1 }, 3);
 })
 
 var stephenModal = new bootstrap.Modal(document.getElementById('stephenModal'));
@@ -356,8 +359,24 @@ stephenModal._element.addEventListener('shown.bs.modal', function () {
 //Stephen Stuff
 
 //Connor Stuff Start
+window.onload = function() {
+  var carImg = document.getElementById('connor-modal-img');
+  var car = document.getElementById('connor-old-car');
 
-  
+  // Change to this image when hovering
+  var newCarImgSrc = './Images and svgs/ConnorImages/ConnorCarNew.png'; 
+
+  // Save the old src to revert back to it
+  var oldCarImgSrc = './Images and svgs/ConnorImages/ConnorCarOld.png';
+
+  carImg.addEventListener('mouseover', function() {
+      car.src = newCarImgSrc;
+  });
+
+  carImg.addEventListener('mouseout', function() {
+      car.src = oldCarImgSrc;
+  });
+}
 //Connor Stuff End
 
 //PODIUM BEHAVIOUR
@@ -377,3 +396,25 @@ gsap.utils.toArray(MorrisLogo).forEach((letter, i) => {
 
   letterTl.fromTo(letter, { strokeDashoffset: (MorrisLogo[i].getTotalLength()) }, { strokeDashoffset: 0, duration: 1, delay: 2 })
 });
+
+var container = document.querySelector(".morrisRight");
+var mask = document.querySelector(".mMaskContainer");
+//var maskContent = document.querySelector(".mMask-content");
+
+container.addEventListener("mousemove", onMove);
+
+
+function onMove(e) {
+
+  var rect = e.target.getBoundingClientRect();
+  var x = Math.round(((e.clientX - rect.left) / document.querySelector('.morrisRight').clientWidth) * 100); //x position within the element.
+  var y = Math.round(((e.clientY - rect.top) / document.querySelector('.morrisRight').clientHeight) * 100);  //y position within the element.
+  //console.log("Left? : " + x + " ; Top? : " + y + ".");
+
+  gsap.to(mask, {
+    "--x": `${x}%`,
+    "--y": `${y}%`,
+    duration: 0.3,
+    ease: "sine.out"
+  })
+}
