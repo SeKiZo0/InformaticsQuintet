@@ -31,6 +31,11 @@ carA.fromTo("#car2",
   { x: 2000, duration: 0.9, ease: "power3.in", },
   2.7)
 
+carA.fromTo("#car3",
+  { x: -0 },
+  { x: 2000, duration: 0.9, ease: "power3.in", },
+  2.6)
+
 carA.fromTo(".infoCard",
   //uses percent instead of px(https://gsap.com/community/forums/topic/8148-animating-x-with-percentage/#:~:text=GSAP%20can%20do%20percentage%20x,and%20yPercent%20for%20responsive%20animations.&text=Codepen%20example%20of%20interactive%20responsive,HTML)
   { xPercent: -100 },
@@ -171,8 +176,15 @@ console.log(sM);
 // Create an object that gsap can animate
 const val = { distance: 0 };
 
-var rotationCar = 0
+var rotationCar = 0;
 
+function getRandomArbitrary(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+let scoremultiplier = 4;
+
+let gameScore = document.getElementById("gameScore");
 
 const carInfo = gsap.timeline({ paused: true }).to(val, {
   // Animate from distance 0 to the total distance
@@ -193,6 +205,8 @@ const carInfo = gsap.timeline({ paused: true }).to(val, {
     //uses previous rotation value as reference
     gsap.fromTo(circle, { rotation: rotationCar }, { rotation: radians_to_degrees(rotate) })
     rotationCar = radians_to_degrees(rotate);
+    scoremultiplier +=  getRandomArbitrary(0, 2);
+    gameScore.innerHTML = "SCORE: " + Math.trunc(val.distance * scoremultiplier);
   },
   onComplete: function () {
     // Pause the timeline at the end of this animation
@@ -205,6 +219,9 @@ const carInfo = gsap.timeline({ paused: true }).to(val, {
   // Make the animation lasts 5 seconds
   duration: 4,
   // Function call on each frame of the animation
+  onStart: () => {
+    gsap.fromTo("#point1",{scale:1, opacity:1},{scale:0, opacity:0});
+  },
   onUpdate: () => {
     // Query a point at the new distance value
     const point1 = trackSVG.getPointAtLength(val.distance);
@@ -215,6 +232,8 @@ const carInfo = gsap.timeline({ paused: true }).to(val, {
     //uses previous rotation value as reference
     gsap.fromTo(circle, { rotation: rotationCar }, { rotation: radians_to_degrees(rotate) })
     rotationCar = radians_to_degrees(rotate);
+    scoremultiplier +=  getRandomArbitrary(0, 2);
+    gameScore.innerHTML = "SCORE: " + Math.trunc(val.distance * scoremultiplier);
   },
   onComplete: function () {
     // Pause the timeline at the end of this animation
@@ -227,6 +246,9 @@ const carInfo = gsap.timeline({ paused: true }).to(val, {
   // Make the animation lasts 5 seconds
   duration: 2,
   // Function call on each frame of the animation
+  onStart: () => {
+    gsap.fromTo("#point2",{scale:1, opacity:1},{scale:0, opacity:0});
+  },
   onUpdate: () => {
     // Query a point at the new distance value
     const point1 = trackSVG.getPointAtLength(val.distance);
@@ -237,6 +259,8 @@ const carInfo = gsap.timeline({ paused: true }).to(val, {
     //uses previous rotation value as reference
     gsap.fromTo(circle, { rotation: rotationCar }, { rotation: radians_to_degrees(rotate) })
     rotationCar = radians_to_degrees(rotate);
+    scoremultiplier +=  getRandomArbitrary(0, 2);
+    gameScore.innerHTML = "SCORE: " + Math.trunc(val.distance * scoremultiplier);
   },
   onComplete: function () {
     // Pause the timeline at the end of this animation
@@ -249,6 +273,9 @@ const carInfo = gsap.timeline({ paused: true }).to(val, {
   // Make the animation lasts 5 seconds
   duration: 2,
   // Function call on each frame of the animation
+  onStart: () => {
+    gsap.fromTo("#point3",{scale:1, opacity:1},{scale:0, opacity:0});
+  },
   onUpdate: () => {
     // Query a point at the new distance value
     const point1 = trackSVG.getPointAtLength(val.distance);
@@ -259,9 +286,14 @@ const carInfo = gsap.timeline({ paused: true }).to(val, {
     //uses previous rotation value as reference
     gsap.fromTo(circle, { rotation: rotationCar }, { rotation: radians_to_degrees(rotate) })
     rotationCar = radians_to_degrees(rotate);
+    scoremultiplier +=  getRandomArbitrary(0, 2);
+    gameScore.innerHTML = "SCORE: " + Math.trunc(val.distance * scoremultiplier);
   },
   onComplete: function () {
     // Pause the timeline at the end of this animation
+    const element = document.getElementById("avatars");
+    console.log(element);
+    element.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
     carInfo.pause();
   },
 });
@@ -272,6 +304,18 @@ function radians_to_degrees(radians) {
 }
 
 document.querySelector(".racetrack").addEventListener("click", function() {
+  carInfo.play();
+});
+
+document.querySelector("#point1").addEventListener("click", function() {
+  carInfo.play();
+});
+
+document.querySelector("#point2").addEventListener("click", function() {
+  carInfo.play();
+});
+
+document.querySelector("#point3").addEventListener("click", function() {
   carInfo.play();
 });
 
@@ -331,3 +375,21 @@ window.onload = function() {
   });
 }
 //Connor Stuff End
+
+//PODIUM BEHAVIOUR
+
+const MorrisLogo = document.querySelectorAll("#morrisLogo path");
+
+gsap.utils.toArray(MorrisLogo).forEach((letter, i) => {
+  let letterTl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".mAbout",
+      start: "-25% top",
+      scrub: false,
+      //markers: true,
+      toggleActions: "restart pause resume pause",
+    }
+  });
+
+  letterTl.fromTo(letter, { strokeDashoffset: (MorrisLogo[i].getTotalLength()) }, { strokeDashoffset: 0, duration: 1, delay: 2 })
+});

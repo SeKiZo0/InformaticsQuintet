@@ -11,13 +11,20 @@
 
 @font-face {
   font-family: OurWebsiteFont;
-  src: url(./fonts/Lexend-Regular.ttf);
+  src: url(./fonts/RobotoSlab-VariableFont_wght.ttf);
 }
 
 @font-face {
   font-family: RicoHeader;
   src: url(./fonts/Orbitron-SemiBold.ttf);
 }
+
+@font-face {
+  font-family: ArcadeFont;
+  src: url(./fonts/Arcade-font.ttf);
+}
+
+
 
 a {
   text-decoration: none;
@@ -61,8 +68,8 @@ body {
 
 body,
 html {
-  /*scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;*/
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
 }
 
 section {
@@ -121,6 +128,7 @@ svg {
 
 .block3 {
   background: rgb(188, 60, 60) 98.38%;
+  box-shadow: 0px 0px 500px inset rgba(0, 0, 0, 0.7);
 }
 
 
@@ -138,10 +146,6 @@ svg {
   width: 100%;
   overflow-y: scroll;
   border-radius: 50px;
-}
-
-.block3 {
-  box-shadow: 0px 0px 500px inset rgba(0, 0, 0, 0.7);
 }
 
 /*Morris css start*/
@@ -178,9 +182,14 @@ svg {
 }
 
 #car1,
-#car2 {
+#car2,
+#car3 {
   max-height: 120px;
-  margin-left: 20px;
+  margin: 20px
+}
+
+hr{
+  border-top: 7px dashed white;
 }
 
 #car2 {
@@ -302,49 +311,47 @@ svg {
 }
 
 .racetrack {
-  height: 1000px;
-  width: 1000px;
+  position: relative;
+  height: 100vh;
+  width: 100vh;
 }
 
 #raceSVG {
-  height: 1000px;
-  width: 1000px;
+  height: 100vh;
+  width: 100vh;
 }
 
 #RCar {
-  transform: translateY(175px)
+  transform: translateY(18.7vh);
+  height: 30px;
 }
 
 .racePoints{
-  width: 100px;
-  height: 100px;
+  padding: 20px;
+  width: 25%;
   overflow: hidden;
-  background-color: var(--lightBlue);
-  border: solid 1px var(--blue);
-  border-radius: 5px;
+  background-color: var(--connorGrey);
+  font-family: ArcadeFont;
+  font-size: 20pt;
+  letter-spacing: 2px;
+  border: solid 3px yellow;
   position:absolute
 }
 
 #point1{
-  height: 200px;
-  width: 150px;
   opacity: 0;  
-  transform: translateX(360px) translateY(60px);
+  transform: translateX(27vw) translateY(60px);
   
 }
 
 #point2{
-  height: 200px;
-  width: 150px;
   opacity: 0;  
-  transform: translateX(360px) translateY(360px);  
+  transform: translateX(27vw) translateY(360px);  
 }
 
 #point3{
-  height: 200px;
-  width: 150px;
   opacity: 0;  
-  transform: translateX(-360px) translateY(565px);
+  transform: translateX(-27vw) translateY(565px);
 }
 
 /*Morris css end*/
@@ -572,8 +579,11 @@ img {
 }
 
 .avatar-circle:hover {
+  transition: all .4s ease;
+  -webkit-transition: all .4s ease;
   background-color: rgb(78, 78, 78);
   box-shadow: 0px 0px 50px inset var(--primary-background);
+  transform: scale(110%) !important;
 }
 
 .icon {
@@ -625,3 +635,38 @@ img {
 /*Stephen CSS START*/
 
 /*Stephen CSS END*/
+
+/* Aditional */
+
+#arcadeLines{
+  z-index: 4; 
+  width: 100vh; 
+  height: 100vh; 
+  transform: translateY(-30px); 
+  opacity: 1;
+  box-shadow: 0px 0px 500px inset black;
+}
+
+#gameText{
+  z-index: 6;
+  margin: 10px;
+  position: absolute;
+  left: 33%;
+  font-family: ArcadeFont;
+  font-size: 300%;
+  color: yellow;
+  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-width: 1.00px;
+}
+
+#gameScore{
+  bottom: 0px;
+  margin: 20px;
+  position: absolute;
+  font-family: ArcadeFont;
+  font-size: 300%;
+  color: yellow;
+  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-width: 1.00px;
+}
+
