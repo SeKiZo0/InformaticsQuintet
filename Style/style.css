@@ -366,11 +366,13 @@ svg {
   top: 20px;
   bottom:10px;
   height: 97.5vh;
-  width: 100vh;
+  width: auto;
+  border-radius: 5px;
+  left: 0.65vw;
 }
 
 #RCar {
-  transform: translateY(18.7vh);
+  transform: translateY(20vh) translateX(20px);
   height: 30px;
 }
 
@@ -381,31 +383,33 @@ svg {
 
 .racePoints{
   padding: 20px;
-  width: 25%;
+  width: 40%;
+  height: 70%;
   overflow: hidden;
   background-color: var(--connorGrey);
   font-family: ArcadeFont;
   font-size: 20pt;
   letter-spacing: 2px;
   border: solid 3px yellow;
-  position:absolute
+  border-radius: 5px;
+  position: absolute;
 }
 
 #point1{
   opacity: 0;  
-  transform: translateX(27vw) translateY(-260px);
+  /* transform: translateX(27vw) translateY(-260px); */
   
 }
 
 #point2{
   opacity: 0;  
-  transform: translateX(27vw) translateY(-60px);  
+  /* transform: translateX(27vw) translateY(-60px);   */
 }
 
 #point3{
   opacity: 0;  
-  transform: translateX(-27vw) translateY(350px);
-}
+  /* transform: translateX(-27vw) translateY(350px); */
+} 
 
 /*Morris css end*/
 
@@ -736,14 +740,14 @@ img {
   z-index: 4; 
   width: 100vh; 
   height: 98.5vh; 
-  transform: translateY(-15px); 
+  transform: translateY(-17px); 
   opacity: 1;
   box-shadow: 0px 0px 500px inset black;
 }
 
 #gameText{
   z-index: 6;
-  margin: 10px;
+  margin-top: 40px;
   position: absolute;
   left: 39%;
   font-family: ArcadeFont;
@@ -756,12 +760,12 @@ img {
 #gameText2{
   z-index: 6;
   position: absolute;
-  left: 40.5%;
+  left: 40%;
   font-family: ArcadeFont;
   color: yellow;
   -webkit-text-stroke-color: black;
   -webkit-text-stroke-width: 1.00px;
-  margin-top: 70px;
+  margin-top: 100px;
 }
 
 #gameScore{
@@ -790,7 +794,9 @@ img {
 }
 
 .arcade-image{
-  width: 100%;
-  height: 100%;
-  padding-bottom: 15px;
+  width: 70%;
+  height: auto;
+  border: 3px solid white;
+  margin-bottom: 15px;
+  border-radius: 5px;
 }
