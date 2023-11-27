@@ -161,7 +161,7 @@ let trackSVG = document.querySelector("#trackPath");
 //console.log(trackSVG);
 const point = trackSVG.getPointAtLength(10);
 const point2 = trackSVG.getPointAtLength(12);
-const point3 = trackSVG.getPointAtLength(18);
+const point3 = trackSVG.getPointAtLength(180);
 console.log(point);
 console.log(point2);
 console.log(point3);

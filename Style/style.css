@@ -188,7 +188,7 @@ svg {
   margin: 20px
 }
 
-hr{
+.race-track-hr {
   border-top: 7px dashed white;
 }
 
@@ -351,7 +351,7 @@ hr{
 
 #point3{
   opacity: 0;  
-  transform: translateX(-27vw) translateY(565px);
+  transform: translateX(-27vw) translateY(350px);
 }
 
 /*Morris css end*/
@@ -411,11 +411,18 @@ img {
 }
 
 .sun {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   box-shadow: 0 0 100px rgb(64, 109, 255);
   position: absolute;
+}
+
+#bmw-sun {
+  position: absolute; 
+  width: 200px; 
+  height: 200px; 
+  left: 0px;
 }
 
 .globe.earth {
@@ -427,10 +434,10 @@ img {
   animation-duration: 4000ms;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
-  height: 30px;
-  right: 28px;
-  top: 28px;
-  width: 30px;
+  height: 60px;
+  right: 56px;
+  top: 56px;
+  width: 60px;
 }
 
 @keyframes spin {
@@ -444,11 +451,11 @@ img {
 }
 
 .globe.moon {
-  width: 12px;
-  height: 12px;
+  width: 24px;
+  height: 24px;
   background: #d6d6d6;
-  right: 2px;
-  top: 8px;
+  right: 4px;
+  top: 16px;
 }
 
 .globe {
@@ -459,18 +466,18 @@ img {
 .orbit.earth {
   position: relative;
   animation: orbit 36.5s linear infinite;
-  height: 300px;
-  left: -95px;
-  top: -95px;
-  width: 300px;
+  height: 600px;
+  left: -190px;
+  top: -190px;
+  width: 600px;
 }
 
 .orbit.moon {
   animation: orbit 2.7s linear infinite;
-  height: 80px;
-  left: -25px;
-  top: -25px;
-  width: 80px;
+  height: 160px;
+  left: -50px;
+  top: -50px;
+  width: 160px;
 }
 
 .orbit {
@@ -520,6 +527,9 @@ img {
 
 #connor-modal-img {
   grid-area: connor-modal-img;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #connor-old-car {
@@ -697,5 +707,6 @@ img {
 
 .arcade-image{
   width: 100%;
-  height: auto;
+  height: 100%;
+  padding-bottom: 15px;
 }
