@@ -21,11 +21,11 @@
     
     <section class="h-100">
         <header class="h-100 d-flex align-items-center" id="headerSection">
-            <a style="font-size: 70px; font-weight: 400; margin: 150px;" href="#">INFORMATICS
+            <h1 style="font-size: 70pt; font-weight: 400; margin: 150px;">INFORMATICS
                 <br />
                 <img src="./Images and svgs/Logo/ournewlogo.png"
-                    style="height: 70px; aspect-ratio: 77/70; margin-bottom: 20px;"
-                    alt="InformaticsPentadLogo">UINTET</a>
+                    style="height: 90px; aspect-ratio: 77/70; margin-bottom: 30px;"
+                    alt="InformaticsPentadLogo">UINTET</h1>
             <!--<img src="./Images and svgs/lines.svg" class="h-100" style="right: 10%; top: 0px;" alt="BMW M lines">-->
         </header>
     </section>
@@ -34,11 +34,11 @@
 
     <!--WHO WE ARE SECTION START-->
 
-    <section class=" w-100 d-flex align-items-center flex-column">
+    <section class=" w-100 d-flex align-items-center flex-column" style="position: relative;">
         <!--dont touch-->
-
         <div class="racetrack">
-            <h3 id="gameText">CLICK ON THE TRACK</h3>
+            <h3 id="gameText">WHO WE ARE</h3>
+            <h4 id="gameText2">(CLICK ON THE TRACK)</h4>
             <svg viewBox="0 0 500 500" fill="none" id="raceSVG"
                 xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_109_800)">
@@ -517,7 +517,7 @@
             <h3 id="gameScore">SCORE: </h3>
         </div>
 
-        <div id="point1" class="racePoints">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum explicabo aperiam, eos iure, praesentium atque nihil ad sed corrupti natus repellendus necessitatibus dolorum! Quasi nam perspiciatis, dignissimos repudiandae dolor fuga.</div>
+        <div id="point1" class="racePoints"><img src="./Images and svgs/About Us Pictures/Pic1.jpg" class="arcade-image" alt="Picture of the informatics quintet"> natus repellendus necessitatibus dolorum! Quasi nam perspiciatis, dignissimos repudiandae dolor fuga.</div>
         <div id="point2" class="racePoints">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non deserunt nobis porro quos voluptates voluptatem assumenda obcaecati, sit ea at excepturi, sint laborum exercitationem molestiae labore et neque voluptate earum.</div>
         <div id="point3" class="racePoints">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat similique laborum, alias asperiores, voluptatum officia neque nam cum doloribus cumque beatae itaque laudantium, expedita voluptatibus eius necessitatibus distinctio dolore suscipit!</div>
     </section>
@@ -590,7 +590,8 @@
 
     <!-- SPACE SECTION START -->
 
-    <section id="space" class="d-flex justify-content-center text-center h-100">
+    <section id="space" class="d-flex flex-column justify-content-center align-items-center text-center h-100" style="position: relative;">
+        <h1 style="position: absolute; top: 50px;">ANY QUESTIONS?</h1>
         <div class="container d-flex justify-content-center align-items-center h-100 w-100">
             <div class="sun">
                 <img src="../../../Images and svgs/Logo/bmw-logo.png"
@@ -619,11 +620,11 @@
                             <img src="Images and svgs/Stephen Images/BMWM8.png" class="BMWM8" width="auto" height="70%" alt="Avatar of Stephen" style="position: absolute;">
                         </div>
                         <div class="row" style="margin-left: 50px; position: absolute;" id="StephenText">
-                            <h1>
+                            <h1 class="pb-3 pt-2">
                                 Stephen - BCom Informatics
                             </h1>
                             <h3>My Skills</h3>
-                            <ul class="p-5 pt-2">
+                            <ul class="p-5 pt-2 pb-2">
                                 <li>
                                     C#
                                 </li>
@@ -651,7 +652,7 @@
 
                             <h3>My Certifications</h3>
 
-                            <ul class="p-5 pt-2">
+                            <ul class="p-5 pt-2 pb-2">
                                 <li>
                                     Project Management Certification - PMI of South Africa & University of Pretoria
                                 </li>
@@ -1031,6 +1032,12 @@
     function resetText(){
         title.innerHTML = "Why We Want To Be A Part Of The BMW Project";
         gsap.fromTo(title, {opacity: 0}, {opacity: 1});
+    }
+
+    let note = document.getElementById('note');
+
+    function close(){
+        console.log("close works");
     }
 </script>
 

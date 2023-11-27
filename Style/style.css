@@ -11,7 +11,7 @@
 
 @font-face {
   font-family: OurWebsiteFont;
-  src: url(./fonts/RobotoSlab-VariableFont_wght.ttf);
+  src: url(./fonts/SourceCodePro-VariableFont_wght.ttf);
 }
 
 @font-face {
@@ -574,7 +574,7 @@ img {
   margin: 17px;
   justify-content: center;
   align-items: center;
-  /*z-index: 1;*/
+  z-index: 1000;
   aspect-ratio: 1;
 }
 
@@ -651,12 +651,23 @@ img {
   z-index: 6;
   margin: 10px;
   position: absolute;
-  left: 33%;
+  left: 39%;
   font-family: ArcadeFont;
   font-size: 300%;
   color: yellow;
   -webkit-text-stroke-color: black;
   -webkit-text-stroke-width: 1.00px;
+}
+
+#gameText2{
+  z-index: 6;
+  position: absolute;
+  left: 40.5%;
+  font-family: ArcadeFont;
+  color: yellow;
+  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-width: 1.00px;
+  margin-top: 70px;
 }
 
 #gameScore{
@@ -670,3 +681,21 @@ img {
   -webkit-text-stroke-width: 1.00px;
 }
 
+#note{
+  height: 200px;
+  width: 180px;
+  background-color: rgb(236, 243, 137);
+  color: black;
+  font-weight: 600;
+  font-family: ArcadeFont;
+  padding: 20px;
+  position: absolute;
+  z-index: 2000;
+  left: 150px;
+  top: 40px;
+}
+
+.arcade-image{
+  width: 100%;
+  height: auto;
+}
