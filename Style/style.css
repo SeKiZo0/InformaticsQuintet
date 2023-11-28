@@ -738,7 +738,7 @@ img {
 }
 
 /*Stephen CSS START*/
-.sCanvas {display: block; position: absolute; top:0%; left: 0%; right: -10%;}
+.sCanvas {display: block; position: absolute; top:0%; left: 66%; right: 0%; bottom: 0%;}
 
 .sCar{
   position: relative;

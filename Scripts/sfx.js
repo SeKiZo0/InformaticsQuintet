@@ -378,8 +378,8 @@ const sMatrix = () => {
       ctx = canvas.getContext('2d');
   
   // Setting the width and height of the canvas
-  canvas.width = document.querySelector('#stephenModal').clientWidth;
-  canvas.height = document.querySelector('#stephenModal').clientHeight;
+  canvas.width = document.querySelector('.block1').clientWidth;
+  canvas.height = document.querySelector('.block1').clientHeight;
   
   // Setting up the letters
   var letters = 'ABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZ';
