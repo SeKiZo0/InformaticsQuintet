@@ -818,3 +818,12 @@ top: 0%;
   margin-bottom: 15px;
   border-radius: 5px;
 }
+
+.image-container-ross {
+  flex-basis: 80%;
+  height: 10%;
+  margin-left: 500px;
+  position: absolute;
+  top: 10%;
+
+}

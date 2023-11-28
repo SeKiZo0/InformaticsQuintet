@@ -90,7 +90,7 @@ ricoBtn.addEventListener('click', function () {
 });
 
 
-//RICO ANIMATIONS (Basically just copied from morris ლ(́◉◞౪◟◉‵ლ))
+//Ross ANIMATIONS (Basically just copied from morris ლ(́◉◞౪◟◉‵ლ))
 
 let rossBtn = document.getElementById('ross');
 
