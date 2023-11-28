@@ -118,7 +118,7 @@ svg {
 }
 
 .block1 {
-  background: linear-gradient(200deg, var(--lightBlue) 13.57%, rgb(67, 139, 247) 98.38%);
+  background: rgb(67, 139, 247);
 }
 
 .block2 {
@@ -155,26 +155,27 @@ svg {
   /*Morris special sauce*/
   z-index: 0;
   padding-right: 0%;
-  width: 1920px;
-  overflow: hidden;
+  overflow-y: hidden;
 }
 
 .block5 svg {
   left: -20%;
   z-index: 1;
+  overflow: hidden;
   /* or any positive value that works for your layout */
 }
 
 .mContent {
-  padding: 10px;
+  padding: 0px;
   z-index: 2;
   position: relative;
-  overflow-x: hidden;
 }
 
 .mContainer {
   height: 70vh;
   position: relative;
+  overflow-x: hidden;
+  object-fit: contain;
 }
 
 #carContainer {
@@ -205,6 +206,7 @@ svg {
   width: 100vw;
   position: absolute;
   background-color: rgb(49, 49, 49);
+
   /*display: none;*/
 }
 
@@ -309,8 +311,12 @@ svg {
 #MorrisText {
   position: absolute;
   top: 18%;
-  gap: 1%
+  gap: 2%
 
+}
+
+#MorrisText > h1{
+  margin-left: 30px;
 }
 
 .morrisRight{
@@ -353,7 +359,8 @@ svg {
   transition: clip-path 50ms;
 }
 .morrisLeft{
-  min-width: 340px;
+  min-width: 330px;
+  padding-left: 30px;
 }
 
 .racetrack {
@@ -731,6 +738,17 @@ img {
 }
 
 /*Stephen CSS START*/
+.sCanvas {display: block; position: absolute; top:0%; left: 0%; right: -10%;}
+
+.sCar{
+  position: relative;
+}
+
+.BMWM8{
+  z-index: 20;
+top: 0%;
+}
+
 
 /*Stephen CSS END*/
 

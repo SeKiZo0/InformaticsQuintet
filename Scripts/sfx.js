@@ -124,9 +124,9 @@ morrisBTN.addEventListener('click', function () {
     }
   });
   morrisTl.fromTo('.displacement', { attr: { r: 0 } }, { attr: { r: 600 }, duration: 2 });
-  morrisTl.fromTo(".mContainer", { x: -50, opacity: 0 }, { x: 50, opacity: 1, duration: 1 }, 1);
+  morrisTl.fromTo(".mContainer", { x: -100, opacity: 0 }, { x: 10, opacity: 1, duration: 1 }, 1);
   morrisTl.fromTo("#m5Morris", { x: 0, opacity: 1, scale: 1 }, { x: 1000, scale: 2, opacity: 0, duration: 1, delay: 1 }, 2).to("#m5Morris", { x: 10000 });
-  morrisTl.fromTo("#MorrisText", { x: -100, opacity: 0 }, { x: -30, opacity: 1, duration: 1 }, 3);
+  morrisTl.fromTo("#MorrisText", { x: -100, opacity: 0 }, { x: -10, opacity: 1, duration: 1 }, 3);
   morrisTl.to(".displacement", { attr: { r: 800 }, duration: 2 }, 3);
 
   const MorrisLogo = document.querySelectorAll("#morrisLogo path");
@@ -134,8 +134,9 @@ morrisBTN.addEventListener('click', function () {
   gsap.utils.toArray(MorrisLogo).forEach((letter, i) => {
     let letterTl = gsap.timeline({
       scrollTrigger: {
+        scroller: ".mContent",
         trigger: ".mAbout",
-        start: "-25% top",
+        start: "-100% top",
         scrub: false,
         //markers: true,
         toggleActions: "restart pause resume pause",
@@ -147,6 +148,28 @@ morrisBTN.addEventListener('click', function () {
 
   //morrisAnimation.play()
 });
+
+var container = document.querySelector(".morrisRight");
+var mask = document.querySelector(".mMaskContainer");
+//var maskContent = document.querySelector(".mMask-content");
+
+container.addEventListener("mousemove", onMove);
+
+
+function onMove(e) {
+
+  var rect = e.target.getBoundingClientRect();
+  var x = Math.round(((e.clientX - rect.left) / document.querySelector('.morrisRight').clientWidth) * 100); //x position within the element.
+  var y = Math.round(((e.clientY - rect.top) / document.querySelector('.morrisRight').clientHeight) * 100);  //y position within the element.
+  //console.log("Left? : " + x + " ; Top? : " + y + ".");
+
+  gsap.to(mask, {
+    "--x": `${x}%`,
+    "--y": `${y}%`,
+    duration: 0.3,
+    ease: "sine.out"
+  })
+}
 
 
 
@@ -349,13 +372,56 @@ stephenBTN.addEventListener('click', function () {
 })
 
 var stephenModal = new bootstrap.Modal(document.getElementById('stephenModal'));
+const sMatrix = () => {
+  // Initialising the canvas
+  var canvas = document.querySelector('.sCanvas'),
+      ctx = canvas.getContext('2d');
+  
+  // Setting the width and height of the canvas
+  canvas.width = document.querySelector('#stephenModal').clientWidth;
+  canvas.height = document.querySelector('#stephenModal').clientHeight;
+  
+  // Setting up the letters
+  var letters = 'ABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZ';
+  letters = letters.split('');
+  
+  // Setting up the columns
+  var fontSize = 10,
+      columns = canvas.width / fontSize;
+  
+  // Setting up the drops
+  var drops = [];
+  for (var i = 0; i < columns; i++) {
+    drops[i] = 1;
+  }
+  
+  // Setting up the draw function
+  function draw() {
+    ctx.fillStyle = 'rgba(67, 139, 247, 0.05)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    for (var i = 0; i < drops.length; i++) {
+      var text = letters[Math.floor(Math.random() * letters.length)];
+      ctx.fillStyle = '#0f0';
+      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+      drops[i]++;
+      if (drops[i] * fontSize > canvas.height && Math.random() > .95) {
+        drops[i] = 0;
+      }
+    }
+  }
+  
+  // Loop the animation
+  setInterval(draw, 33);
+  }
 
 // Event listener for modal shown event
 stephenModal._element.addEventListener('shown.bs.modal', function () {
   // Your code to handle modal completion
+  sMatrix();
   // Refreshing scroll trigger
   ScrollTrigger.refresh();
 });
+
 //Stephen Stuff
 
 //Connor Stuff Start
@@ -381,40 +447,4 @@ window.onload = function() {
 
 //PODIUM BEHAVIOUR
 
-const MorrisLogo = document.querySelectorAll("#morrisLogo path");
 
-gsap.utils.toArray(MorrisLogo).forEach((letter, i) => {
-  let letterTl = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".mAbout",
-      start: "-25% top",
-      scrub: false,
-      //markers: true,
-      toggleActions: "restart pause resume pause",
-    }
-  });
-
-  letterTl.fromTo(letter, { strokeDashoffset: (MorrisLogo[i].getTotalLength()) }, { strokeDashoffset: 0, duration: 1, delay: 2 })
-});
-
-var container = document.querySelector(".morrisRight");
-var mask = document.querySelector(".mMaskContainer");
-//var maskContent = document.querySelector(".mMask-content");
-
-container.addEventListener("mousemove", onMove);
-
-
-function onMove(e) {
-
-  var rect = e.target.getBoundingClientRect();
-  var x = Math.round(((e.clientX - rect.left) / document.querySelector('.morrisRight').clientWidth) * 100); //x position within the element.
-  var y = Math.round(((e.clientY - rect.top) / document.querySelector('.morrisRight').clientHeight) * 100);  //y position within the element.
-  //console.log("Left? : " + x + " ; Top? : " + y + ".");
-
-  gsap.to(mask, {
-    "--x": `${x}%`,
-    "--y": `${y}%`,
-    duration: 0.3,
-    ease: "sine.out"
-  })
-}
