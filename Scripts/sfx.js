@@ -382,7 +382,7 @@ const sMatrix = () => {
   canvas.height = document.querySelector('.block1').clientHeight;
   
   // Setting up the letters
-  var letters = 'ABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZ';
+  var letters = 'ABCSTEPHENDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZ';
   letters = letters.split('');
   
   // Setting up the columns
@@ -397,7 +397,7 @@ const sMatrix = () => {
   
   // Setting up the draw function
   function draw() {
-    ctx.fillStyle = '#282828';
+    ctx.fillStyle = 'rgba(40,40,40,0.2)';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     for (var i = 0; i < drops.length; i++) {
       var text = letters[Math.floor(Math.random() * letters.length)];

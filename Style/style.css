@@ -125,6 +125,7 @@ svg {
 .block2 {
   background: linear-gradient(200deg, var(--blue) 13.57%, rgb(79, 89, 233) 98.38%);
   overflow: hidden;
+  font-size: 0.75rem !important;
 }
 
 .block3 {
@@ -801,7 +802,7 @@ img {
 }
 
 /*Stephen CSS START*/
-.sCanvas {display: block; position: absolute; top:0%; left: 66%; right: 0%; bottom: 0%;}
+.sCanvas {display: block; position: absolute; top:0%; left: 0%; right: 0%; bottom: 0%;opacity: 0.4;}
 
 .sCar{
   position: relative;
@@ -890,7 +891,7 @@ top: 0%;
   top: 10%;
 
 }
-
+/*
 body{
   display: none;
-}
+}*/
