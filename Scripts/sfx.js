@@ -22,18 +22,18 @@ carA.fromTo("#car1",
   //starting value, you can specify anything you want to change, keep in mind that this works similar to a transform animation
   { x: -0 },
   //ending value, here you will also have to specify duration and ease(https://gsap.com/docs/v3/Eases/)
-  { x: 2000, duration: 0.9, ease: "power3.in", }
+  { x: 3000, duration: 0.9, ease: "power3.in", }
   //This is the position in the timeline specified in seconds(https://gsap.com/docs/v3/GSAP/Timeline/)
   , 2.5)
 
 carA.fromTo("#car2",
   { x: -0 },
-  { x: 2000, duration: 0.9, ease: "power3.in", },
+  { x: 3000, duration: 0.9, ease: "power3.in", },
   2.7)
 
 carA.fromTo("#car3",
   { x: -0 },
-  { x: 2000, duration: 0.9, ease: "power3.in", },
+  { x: 3000, duration: 0.9, ease: "power3.in", },
   2.6)
 
 carA.fromTo(".infoCard",
