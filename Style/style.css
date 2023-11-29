@@ -177,7 +177,6 @@ svg {
 .mContainer {
   height: 70vh;
   position: relative;
-  overflow-x: hidden;
   object-fit: contain;
 }
 
