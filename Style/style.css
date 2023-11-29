@@ -65,7 +65,7 @@ body {
   padding-right: 0px !important;
   overflow-x: hidden;
 }
-
+/*
 body,
 html {
  scroll-snap-type: y mandatory;
@@ -73,8 +73,8 @@ html {
 }
 
 section {
-  scroll-snap-align: start;
-}
+  scroll-snap-align: center;
+}*/
 
 ::-webkit-scrollbar {
   display: none;
@@ -242,6 +242,13 @@ svg {
 
 .raceSection {
   position: relative;
+  background-color: var(--primary-background);
+  height: 100vh;
+}
+
+body section{
+  background-color: var(--primary-background);
+  height: 100vh;
 }
 
 

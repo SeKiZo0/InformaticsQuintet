@@ -19,7 +19,7 @@
 
     <!--HEADER START-->
 
-    <section class="h-100">
+    <section class="h-100 scroller">
         <header class="h-100 d-flex align-items-center" id="headerSection">
             <h1 style="font-size: 70pt; font-weight: 400; margin: 150px;">INFORMATICS
                 <br />
@@ -36,7 +36,7 @@
 
     <section class=" w-100 d-flex align-items-center" style="position: relative; place-content: center;">
         <!--dont touch-->
-        <object class="joycon" data="Images and svgs/left joycon.svg" type="image/svg+xml"></object>
+        <object class="joycon scroller" data="Images and svgs/left joycon.svg" type="image/svg+xml"></object>
         <div class="racetrack">
 
             <h3 id="gameText">WHO WE ARE</h3>
@@ -559,7 +559,7 @@
 
     <!--AVATAR SECTION START-->
 
-    <section class="h-100 d-flex text-center justify-content-center" style="position: relative;" id="avatars">
+    <section class="h-100 d-flex text-center justify-content-center scroller" style="position: relative;" id="avatars">
         <!-- <img src="./Images and svgs/lines.svg" class="float-end"
             style="position: absolute; z-index: 0; height: 100%; width: auto;" alt="BMW M lines">-->
         <div class="w-100 row justify-content-center text-center" id="avatar-section">
@@ -597,7 +597,7 @@
 
     <!--Drag race section-->
 
-    <section class="raceSection">
+    <section class="raceSection scroller">
         <!-- PODIUM SECTION START -->
 
         <div class="infoCard d-flex flex-column justify-content-around align-items-center text-center">
@@ -638,7 +638,7 @@
 
     <!-- SPACE SECTION START -->
 
-    <section id="space" class="d-flex flex-column justify-content-center align-items-center text-center h-100"
+    <section id="space" class="d-flex flex-column justify-content-center align-items-center text-center h-100 scroller"
         style="position: relative;">
         <h1 style="position: absolute; top: 50px;">ANY QUESTIONS?</h1>
         <div class="container d-flex justify-content-center align-items-center h-100 w-100">
@@ -1129,13 +1129,21 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.28/bundled/lenis.min.js"></script>
-
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.21/jquery.scrollify.min.js" integrity="sha512-UyX8JsMsNRW1cYl8BoxpcamonpwU2y7mSTsN0Z52plp7oKo1u92Xqfpv6lOlTyH3yiMXK+gU1jw0DVCsPTfKew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <!--you can add anything you want below this point-->
 <script type="module" src="Scripts/sfx.js"></script>
 <!--
 <script type="module" src="Scripts/lenis.js"></script>-->
 
+<script>
+    $(function() {
+          $.scrollify({
+            section : "body > section",
+            scrollSpeed: 10
+          });
+        });
+</script>
 <!-- CUSTOM SCRIPT FOR PODIUM -->
 <script>
     let textbox = document.getElementById("Text-Bubble");
