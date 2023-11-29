@@ -476,14 +476,14 @@ img {
 
 .container {
   top: 50px;
-  height: 400px;
-  width: 400px;
+  height: 300px;
+  width: 300px;
   position: relative;
 }
 
 .sun {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   box-shadow: 0 0 100px rgb(64, 109, 255);
   position: absolute;
@@ -491,8 +491,8 @@ img {
 
 #bmw-sun {
   position: absolute; 
-  width: 200px; 
-  height: 200px; 
+  width: 150px; 
+  height: 150px; 
   left: 0px;
 }
 
@@ -505,10 +505,10 @@ img {
   animation-duration: 4000ms;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
-  height: 60px;
-  right: 56px;
-  top: 56px;
-  width: 60px;
+  height: 45px;
+  right: 42px;
+  top: 42px;
+  width: 45px;
 }
 
 @keyframes spin {
@@ -522,11 +522,11 @@ img {
 }
 
 .globe.moon {
-  width: 24px;
-  height: 24px;
+  width: 18px;
+  height: 18px;
   background: #d6d6d6;
-  right: 4px;
-  top: 16px;
+  right: 3px;
+  top: 12px;
 }
 
 .globe {
@@ -537,18 +537,18 @@ img {
 .orbit.earth {
   position: relative;
   animation: orbit 36.5s linear infinite;
-  height: 600px;
-  left: -190px;
-  top: -190px;
-  width: 600px;
+  height: 450px;
+  left: -142.5px;
+  top: -142.5px;
+  width: 450px;
 }
 
 .orbit.moon {
   animation: orbit 2.7s linear infinite;
-  height: 160px;
-  left: -50px;
-  top: -50px;
-  width: 160px;
+  height: 120px;
+  left: -37.5px;
+  top: -37.5px;
+  width: 120px;
 }
 
 .orbit {
@@ -876,7 +876,7 @@ top: 0%;
 .image-container-ross {
   flex-basis: 80%;
   height: 10%;
-  margin-left: 500px;
+  margin-left: 400px;
   position: absolute;
   top: 10%;
 
