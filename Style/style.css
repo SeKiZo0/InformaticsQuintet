@@ -247,7 +247,6 @@ svg {
 }
 
 body section{
-  background-color: var(--primary-background);
   height: 100vh;
 }
 
