@@ -397,7 +397,7 @@ const sMatrix = () => {
   
   // Setting up the draw function
   function draw() {
-    ctx.fillStyle = 'rgba(67, 139, 247, 0.05)';
+    ctx.fillStyle = '#282828';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     for (var i = 0; i < drops.length; i++) {
       var text = letters[Math.floor(Math.random() * letters.length)];
@@ -428,6 +428,4 @@ stephenModal._element.addEventListener('shown.bs.modal', function () {
 
 //Connor Stuff End
 
-//PODIUM BEHAVIOUR
-
-
+//SCROLL BEHAVIOUR
