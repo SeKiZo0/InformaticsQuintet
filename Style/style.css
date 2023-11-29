@@ -579,12 +579,25 @@ img {
     "connor-programming connor-programming connor-traits"
     "connor-programming connor-programming connor-traits";
   color:white;
-  background: #fefefe13;
-  backdrop-filter: blur(30px);
-  box-shadow: 0 10px 35px 0 #362100A6;
+  backdrop-filter: blur(15px) brightness(120%) saturate(120%); 
+  background: rgba(255, 255, 255, 0.2); 
+  box-shadow: 0 10px 35px 0 rgba(54, 33, 0, 0.4); 
   overflow: hidden;
   padding: 20px 30px 50px 30px;
   z-index: 1;
+}
+
+#connor-modal::before {
+  content: "";
+  position: absolute;
+  top: -10px; /* Adjust the top position to control the depth */
+  left: -10px; /* Adjust the left position to control the depth */
+  right: -10px; /* Adjust the right position to control the depth */
+  bottom: -10px; /* Adjust the bottom position to control the depth */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Border color with transparency */
+  border-radius: 15px;
+  z-index: -1; /* Place it behind the content */
+  box-shadow: 0 0 10px rgba(54, 33, 0, 0.6); /* Add a shadow to create depth */
 }
 
 .connor-box {
@@ -592,16 +605,50 @@ img {
   border-radius: 15px;
   padding: 10px;
   margin: 5px;
+  transition: box-shadow 2s ease;
 }
 
 .connor-box:hover {
-  border-color: var(--blue);
-  box-shadow: 
-  0 0 5px white,
-  0 0 15px var(--lightBlue),
-  0 0 30px var(--lightBlue),
-  0 0 45px var(--blue),
-  0 0 60px var(--blue);
+  animation: box-shadow-animation 6s infinite alternate; /* Apply the animation */
+}
+
+@keyframes box-shadow-animation {
+
+  0% {
+    border-color: var(--red);
+    box-shadow: 0 0 5px white;
+    box-shadow: 0 0 15px var(--red);
+    box-shadow: 0 0 30px var(--red);
+    box-shadow: 0 0 45px var(--red);
+    box-shadow: 0 0 60px var(--red);
+  }
+
+  33% {
+    border-color: var(--lightBlue);
+    box-shadow: 0 0 5px white;
+    box-shadow: 0 0 15px var(--lightBlue);
+    box-shadow: 0 0 30px var(--lightBlue);
+    box-shadow: 0 0 45px var(--blue);
+    box-shadow: 0 0 60px var(--blue);
+  }
+
+  67% {
+    border-color: var(--red);
+    box-shadow: 0 0 5px white;
+    box-shadow: 0 0 15px var(--red);
+    box-shadow: 0 0 30px var(--red);
+    box-shadow: 0 0 45px var(--red);
+    box-shadow: 0 0 60px var(--red);
+  }
+
+  100% {
+    border-color: var(--lightBlue);
+    box-shadow: 0 0 5px white;
+    box-shadow: 0 0 15px var(--lightBlue);
+    box-shadow: 0 0 30px var(--lightBlue);
+    box-shadow: 0 0 45px var(--blue);
+    box-shadow: 0 0 60px var(--blue);
+  }
 }
 
 #connor-modal-img {
