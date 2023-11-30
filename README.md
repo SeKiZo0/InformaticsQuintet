@@ -1,2 +1,2 @@
 ﻿# InformaticsQuintet
-We are just a team of guys who lice coding
+We are just a team of guys who like coding
